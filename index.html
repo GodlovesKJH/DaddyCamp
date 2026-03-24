@@ -1,0 +1,2705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Daddy Camp — 꿈의학교 대디캠프 15년의 기록</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5EFE3;
+  --warm-white: #FDFAF4;
+  --paper: #FAF6EE;
+  --ink: #1C1611;
+  --ink-mid: #3D3228;
+  --ink-light: #6B5A4A;
+  --ink-faint: #A0897A;
+  --gold: #B8832E;
+  --gold-light: #D4A85C;
+  --gold-pale: #EDD9A8;
+  --forest: #2F4A38;
+  --forest-light: #4A7A58;
+  --rust: #8B3A1E;
+  --sky: #3A5A7A;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Noto Sans KR',sans-serif; background:var(--cream); color:var(--ink); overflow-x:hidden; }
+
+/* ───── NAV ───── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  height:60px; padding:0 48px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(245,239,227,0.95); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(184,131,46,0.15);
+}
+.nav-brand { font-family:'Playfair Display',serif; font-size:15px; color:var(--forest); letter-spacing:0.05em; }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:12px; letter-spacing:0.1em; color:var(--ink-light); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover { color:var(--gold); }
+.nav-hamburger {
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:36px; height:36px; cursor:pointer; background:none; border:none; padding:4px;
+}
+.nav-hamburger span {
+  display:block; width:22px; height:2px;
+  background:var(--ink); border-radius:2px; transition:all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity:0; }
+.nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu {
+  display:none; position:fixed; top:60px; left:0; right:0; z-index:199;
+  background:rgba(245,239,227,0.98); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(184,131,46,0.2);
+  flex-direction:column; padding:16px 24px 24px;
+}
+.nav-mobile-menu.open { display:flex; }
+.nav-mobile-menu a {
+  font-size:14px; letter-spacing:0.08em; color:var(--ink-light);
+  text-decoration:none; padding:12px 0;
+  border-bottom:1px solid rgba(184,131,46,0.1);
+  transition:color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom:none; }
+.nav-mobile-menu a:hover { color:var(--gold); }
+
+/* ───── HERO ───── */
+#hero {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:100px 48px 80px;
+  position:relative; overflow:hidden;
+}
+.hero-texture {
+  position:absolute; inset:0; opacity:0.03;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,0,0,0.5) 40px, rgba(0,0,0,0.5) 41px),
+                    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0,0,0,0.5) 40px, rgba(0,0,0,0.5) 41px);
+}
+.hero-glow {
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 50% at 50% 60%, rgba(184,131,46,0.08) 0%, transparent 70%);
+}
+.hero-eyebrow {
+  font-size:11px; letter-spacing:0.3em; color:var(--gold); font-weight:500;
+  margin-bottom:32px; animation:fadeUp 1s ease both;
+}
+.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(56px,9vw,112px); line-height:0.95;
+  color:var(--ink); margin-bottom:8px;
+  animation:fadeUp 1s 0.1s ease both;
+}
+.hero-title .italic { font-style:italic; color:var(--forest); }
+.hero-title .sub { font-size:clamp(24px,4vw,48px); color:var(--gold); display:block; margin-top:8px; }
+.hero-kor {
+  font-family:'Noto Serif KR',serif; font-size:clamp(16px,2.2vw,22px); font-weight:300;
+  color:var(--ink-light); letter-spacing:0.08em; margin:32px 0 16px;
+  animation:fadeUp 1s 0.2s ease both;
+}
+.hero-desc {
+  font-size:14px; color:var(--ink-faint); letter-spacing:0.05em;
+  margin-bottom:60px; animation:fadeUp 1s 0.3s ease both;
+}
+.hero-line { width:1px; height:60px; background:linear-gradient(to bottom, var(--gold), transparent); margin:0 auto 60px; animation:fadeUp 1s 0.35s ease both; }
+.hero-stats { display:flex; gap:72px; justify-content:center; animation:fadeUp 1s 0.4s ease both; }
+.stat { text-align:center; }
+.stat-n { font-family:'Playfair Display',serif; font-size:56px; color:var(--forest); line-height:1; }
+.stat-l { font-size:11px; letter-spacing:0.15em; color:var(--ink-faint); margin-top:6px; }
+.hero-scroll { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--ink-faint); font-size:10px; letter-spacing:0.2em; animation:fadeUp 1s 0.7s ease both; }
+.scroll-bar { width:1px; height:48px; background:linear-gradient(to bottom,var(--gold),transparent); animation:pulse 2s 1s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ───── SECTION BASE ───── */
+.section { padding:120px 0; }
+.container { max-width:1080px; margin:0 auto; padding:0 48px; }
+.container-narrow { max-width:760px; margin:0 auto; padding:0 48px; }
+
+.eyebrow { font-size:11px; letter-spacing:0.25em; color:var(--gold); font-weight:500; display:block; margin-bottom:16px; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,48px); line-height:1.15; color:var(--ink); margin-bottom:32px; }
+.section-lead { font-family:'Noto Serif KR',serif; font-size:17px; font-weight:300; line-height:1.95; color:var(--ink-light); margin-bottom:64px; max-width:680px; }
+.prose p { font-family:'Noto Serif KR',serif; font-size:15px; line-height:2.1; color:var(--ink-light); margin-bottom:20px; }
+
+/* ───── ABOUT ───── */
+#about { background:var(--warm-white); }
+.about-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.pillar-list { display:flex; flex-direction:column; gap:2px; }
+.pillar {
+  display:flex; gap:20px; align-items:flex-start;
+  padding:28px 24px; background:var(--cream);
+  border-left:3px solid transparent; transition:border-color 0.2s, background 0.2s;
+}
+.pillar:hover { border-left-color:var(--gold); background:#F0E9D8; }
+.pillar-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+.pillar-title { font-family:'Noto Serif KR',serif; font-size:15px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.pillar-text { font-size:13px; line-height:1.85; color:var(--ink-faint); }
+
+/* ───── PULL QUOTE ───── */
+.pull-quote {
+  padding:56px 0;
+  border-top:1px solid rgba(184,131,46,0.25);
+  border-bottom:1px solid rgba(184,131,46,0.25);
+  margin:72px 0;
+}
+.pull-quote blockquote {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(20px,2.8vw,32px); line-height:1.6;
+  color:var(--forest); text-align:center; max-width:820px; margin:0 auto 20px;
+}
+.pull-quote cite { display:block; text-align:center; font-size:12px; letter-spacing:0.1em; color:var(--ink-faint); }
+
+/* ───── TIMELINE ───── */
+#timeline { background:var(--ink); }
+#timeline .eyebrow { color:var(--gold-light); }
+#timeline .section-title { color:var(--cream); }
+#timeline .section-lead { color:rgba(245,239,227,0.55); }
+
+.timeline-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 96px; }
+.tl { border-left:1px solid rgba(184,131,46,0.25); padding-left:0; }
+.tl-item { position:relative; margin-bottom:56px; padding-left:36px; }
+.tl-item::before {
+  content:''; position:absolute; left:-5px; top:8px;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--gold); border:2px solid var(--ink);
+  box-shadow:0 0 0 4px rgba(184,131,46,0.2);
+}
+.tl-year { font-family:'Playfair Display',serif; font-size:12px; letter-spacing:0.2em; color:var(--gold-light); margin-bottom:8px; }
+.tl-title { font-family:'Noto Serif KR',serif; font-size:18px; font-weight:600; color:var(--cream); margin-bottom:10px; }
+.tl-text { font-size:13px; line-height:1.95; color:rgba(245,239,227,0.5); }
+.tl-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.tl-tag {
+  font-size:10px; letter-spacing:0.08em; padding:3px 10px; border-radius:100px;
+  border:1px solid rgba(184,131,46,0.3); color:var(--gold-light);
+  background:rgba(184,131,46,0.1);
+}
+
+/* ───── FEATURED QUOTE (dark on dark) ───── */
+.timeline-big-quote {
+  grid-column:1/-1; margin:16px 0 40px;
+  border:1px solid rgba(184,131,46,0.2);
+  padding:48px; text-align:center;
+}
+.timeline-big-quote p {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(18px,2.5vw,28px); line-height:1.6;
+  color:rgba(245,239,227,0.8); margin-bottom:16px;
+}
+.timeline-big-quote span { font-size:12px; letter-spacing:0.1em; color:rgba(245,239,227,0.35); }
+
+/* ───── STORIES ───── */
+#stories { background:var(--cream); }
+.stories-intro { margin-bottom:64px; }
+.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.story-card {
+  background:var(--warm-white); padding:40px;
+  position:relative; overflow:hidden;
+  transition:background 0.25s;
+}
+.story-card:hover { background:#F0EAD8; }
+.story-card.wide { grid-column:1/-1; background:var(--forest); color:var(--cream); }
+.story-card.wide:hover { background:#3A5844; }
+.story-card.dark { background:var(--ink); }
+.story-card.dark:hover { background:#2A201A; }
+.story-num {
+  font-family:'Playfair Display',serif;
+  font-size:80px; font-weight:700; line-height:1;
+  color:rgba(0,0,0,0.04); position:absolute; top:24px; right:32px;
+  pointer-events:none;
+}
+.story-card.wide .story-num { color:rgba(255,255,255,0.06); }
+.story-card.dark .story-num { color:rgba(255,255,255,0.04); }
+.story-meta { font-size:11px; letter-spacing:0.12em; color:var(--ink-faint); margin-bottom:20px; }
+.story-card.wide .story-meta { color:rgba(245,239,227,0.45); }
+.story-card.dark .story-meta { color:rgba(245,239,227,0.35); }
+.story-text {
+  font-family:'Noto Serif KR',serif; font-size:16px; line-height:1.95;
+  color:var(--ink-light); margin-bottom:24px;
+}
+.story-card.wide .story-text { font-size:19px; color:rgba(245,239,227,0.88); }
+.story-card.dark .story-text { color:rgba(245,239,227,0.65); }
+.story-author { font-size:13px; font-weight:500; color:var(--ink-faint); }
+.story-card.wide .story-author { color:var(--gold-light); }
+.story-card.dark .story-author { color:var(--gold-pale); }
+
+/* ───── VOICES ───── */
+#voices { background:var(--warm-white); }
+.voice-list { display:flex; flex-direction:column; gap:2px; margin-bottom:64px; }
+.voice-item { padding:40px 48px; background:var(--cream); display:flex; gap:40px; align-items:flex-start; }
+.voice-item:nth-child(even) { background:#EFE8D8; }
+.voice-num { font-family:'Playfair Display',serif; font-size:48px; color:rgba(0,0,0,0.06); font-weight:700; line-height:1; flex-shrink:0; width:56px; }
+.voice-content {}
+.voice-name { font-family:'Noto Serif KR',serif; font-size:14px; font-weight:700; color:var(--forest); margin-bottom:8px; letter-spacing:0.05em; }
+.voice-role { font-size:11px; letter-spacing:0.1em; color:var(--ink-faint); margin-bottom:16px; }
+.voice-text { font-family:'Noto Serif KR',serif; font-size:15px; line-height:2.05; color:var(--ink-light); }
+
+/* ───── JAPAN ───── */
+#japan { background:var(--sky); }
+#japan .eyebrow { color:rgba(200,220,240,0.7); }
+#japan .section-title { color:#EAF2FA; }
+#japan .section-lead { color:rgba(200,225,245,0.65); }
+.japan-body { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.japan-body .prose p { color:rgba(200,225,245,0.65); }
+.japan-body .prose p strong { color:rgba(220,240,255,0.9); }
+.japan-fact {
+  border:1px solid rgba(200,225,245,0.2); padding:40px;
+  background:rgba(255,255,255,0.05);
+}
+.japan-fact-title { font-family:'Playfair Display',serif; font-style:italic; font-size:24px; color:#EAF2FA; margin-bottom:24px; }
+.japan-quote { font-family:'Noto Serif KR',serif; font-size:15px; line-height:2; color:rgba(200,225,245,0.7); margin-bottom:20px; font-style:italic; }
+.japan-cite { font-size:12px; letter-spacing:0.1em; color:rgba(200,225,245,0.4); }
+
+/* ───── OPERATIONS ───── */
+#operations { background:var(--cream); }
+.ops-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:72px; }
+.ops-card { background:var(--warm-white); padding:32px; border-top:2px solid var(--gold); }
+.ops-card:hover { background:#EFE8D8; }
+.ops-icon { font-size:24px; margin-bottom:16px; }
+.ops-title { font-family:'Noto Serif KR',serif; font-size:16px; font-weight:700; color:var(--ink); margin-bottom:10px; }
+.ops-text { font-size:13px; line-height:1.9; color:var(--ink-faint); }
+
+.timeline-steps { display:flex; flex-direction:column; gap:2px; }
+.step { display:flex; gap:32px; align-items:flex-start; padding:28px 32px; background:var(--warm-white); }
+.step:nth-child(even) { background:#EFE8D8; }
+.step-label { font-family:'Playfair Display',serif; font-size:32px; color:var(--gold); line-height:1; flex-shrink:0; width:72px; }
+.step-body h4 { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:8px; }
+.step-body p { font-size:13px; line-height:1.85; color:var(--ink-faint); }
+
+/* ───── GALLERY: VIDEOS ───── */
+#gallery-videos { background: var(--ink); }
+#gallery-videos .eyebrow { color: var(--gold-light); }
+#gallery-videos .section-title { color: var(--cream); }
+#gallery-videos .section-lead { color: rgba(245,239,227,0.5); }
+
+.video-stage {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2px;
+  margin-bottom: 2px;
+  background: #000;
+}
+.video-main {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  /* 그리드 안에서 안정적으로 16:9 유지 */
+  aspect-ratio: 16 / 9;
+}
+.video-main iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+
+/* 모바일: 세로 스택, iframe을 먼저 표시 */
+@media (max-width: 768px) {
+  .video-stage {
+    grid-template-columns: 1fr;
+  }
+  .video-main {
+    width: 100%;
+    /* 모바일에서는 padding-bottom 방식이 더 안정적 */
+    aspect-ratio: unset;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+  .video-info {
+    order: 2;
+  }
+  .video-main {
+    order: 1;
+  }
+}
+.video-fallback {
+  display: none;
+  position: absolute; inset: 0;
+  background: #111;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 32px;
+}
+.video-fallback.show { display: flex; }
+.video-fallback-icon { font-size: 48px; opacity: 0.4; }
+.video-fallback-msg {
+  font-size: 13px; color: rgba(245,239,227,0.45);
+  line-height: 1.7; margin: 0;
+}
+.video-fallback-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #ff0000; color: #fff;
+  padding: 14px 28px; border-radius: 4px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: background 0.2s;
+}
+.video-fallback-btn:hover { background: #cc0000; }
+.video-fallback-btn svg { width: 20px; height: 20px; fill: #fff; }
+
+.video-info {
+  background: var(--ink-mid);
+  padding: 28px 24px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.video-info-year {
+  font-size: 10px; letter-spacing: 0.3em; color: var(--gold-light);
+  margin-bottom: 10px;
+}
+.video-info-title {
+  font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 600;
+  color: var(--cream); line-height: 1.5; margin-bottom: 14px;
+}
+.video-info-desc {
+  font-size: 12px; line-height: 1.9; color: rgba(245,239,227,0.4); flex: 1;
+}
+.video-info-tag {
+  display: inline-block; margin-top: 18px; font-size: 10px;
+  letter-spacing: 0.1em; padding: 4px 12px;
+  border: 1px solid rgba(184,131,46,0.35); color: var(--gold-light); border-radius: 100px;
+}
+
+.video-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2px;
+}
+.vthumb {
+  position: relative; aspect-ratio: 16/9;
+  background: var(--ink-mid); cursor: pointer; overflow: hidden;
+  transition: filter 0.2s;
+}
+.vthumb:hover { filter: brightness(1.2); }
+.vthumb.active { outline: 2px solid var(--gold); outline-offset: -2px; }
+.vthumb img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.45; transition: opacity 0.2s;
+}
+.vthumb:hover img, .vthumb.active img { opacity: 0.65; }
+.vthumb-overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+}
+.vthumb-play {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -60%);
+  width: 28px; height: 28px; background: rgba(184,131,46,0.8);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; transition: transform 0.2s, background 0.2s;
+}
+.vthumb:hover .vthumb-play { transform: translate(-50%,-60%) scale(1.12); background: var(--gold); }
+.vthumb.active .vthumb-play { background: var(--gold); }
+.vthumb-year { font-size: 9px; letter-spacing: 0.12em; color: var(--gold-light); margin-bottom: 2px; }
+.vthumb-name { font-size: 10px; color: rgba(245,239,227,0.75); line-height: 1.35; }
+
+.video-channel-link { margin-top: 28px; text-align: center; }
+.video-channel-link a {
+  font-size: 11px; letter-spacing: 0.15em; color: var(--gold-light);
+  text-decoration: none; border-bottom: 1px solid rgba(184,131,46,0.3); padding-bottom: 3px;
+  transition: color 0.2s;
+}
+.video-channel-link a:hover { color: var(--gold); }
+
+/* ───── GALLERY: PHOTOS ───── */
+#gallery-photos { background: var(--warm-white); }
+
+.year-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid rgba(184,131,46,0.2);
+  margin-bottom: 40px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.year-tabs::-webkit-scrollbar { display: none; }
+.ytab {
+  flex-shrink: 0; padding: 10px 18px; font-size: 12px;
+  letter-spacing: 0.1em; color: var(--ink-faint); cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.ytab:hover { color: var(--gold); }
+.ytab.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
+.ytab.ytab-nocamp { opacity: 0.45; font-style: italic; }
+
+/* 2015 서브탭 */
+.sub-tabs {
+  display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.sub-tab {
+  padding: 8px 20px; font-size: 12px; letter-spacing: 0.08em;
+  border: 1px solid rgba(184,131,46,0.3); border-radius: 20px;
+  cursor: pointer; color: var(--ink-light); transition: all 0.2s;
+  background: transparent;
+}
+.sub-tab:hover { border-color: var(--gold); color: var(--gold); }
+.sub-tab.active { background: var(--gold); color: #fff; border-color: var(--gold); font-weight: 500; }
+.sub-panel { display: none; }
+.sub-panel.active { display: block; }
+
+.photo-panel { display: none; }
+.photo-panel.active { display: block; }
+
+.photo-year-header { margin-bottom: 28px; }
+.photo-year-num {
+  font-family: 'Playfair Display', serif; font-size: clamp(48px,7vw,88px);
+  font-weight: 700; color: rgba(0,0,0,0.04); line-height: 1; margin-bottom: -12px;
+}
+.photo-year-meta {
+  font-family: 'Noto Serif KR', serif; font-size: 13px; font-weight: 300;
+  color: var(--ink-light); letter-spacing: 0.04em;
+}
+.photo-year-meta strong { color: var(--forest); font-weight: 600; }
+
+/* 3열 그리드 — 각 셀 비율 고정 */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+.photo-cell {
+  position: relative; overflow: hidden;
+  background: var(--cream); cursor: pointer;
+}
+.photo-cell.tall { grid-row: span 2; }
+.photo-cell img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s;
+}
+.photo-cell:hover img { transform: scale(1.04); }
+.photo-cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 12px 10px;
+  background: linear-gradient(to top, rgba(28,22,17,0.75) 0%, transparent 100%);
+  color: rgba(245,239,227,0.85); font-size: 10px; letter-spacing: 0.04em;
+  opacity: 0; transition: opacity 0.25s;
+}
+.photo-cell:hover .photo-cap { opacity: 1; }
+
+/* 사진 없음 연도 */
+.photo-empty-state {
+  padding: 64px 32px; text-align: center;
+  background: var(--cream); color: var(--ink-faint);
+  font-size: 13px; line-height: 2;
+}
+.photo-empty-state .ei { font-size: 28px; opacity: 0.3; margin-bottom: 12px; }
+
+/* 라이트박스 */
+.lbox {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: rgba(28,22,17,0.96);
+  align-items: center; justify-content: center; padding: 32px;
+}
+.lbox.open { display: flex; }
+.lbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+.lbox-close {
+  position: fixed; top: 20px; right: 28px; font-size: 26px;
+  color: rgba(245,239,227,0.4); cursor: pointer; background: none; border: none;
+  transition: color 0.2s; line-height: 1;
+}
+.lbox-close:hover { color: var(--cream); }
+
+/* ───── CLOSING ───── */
+#closing { background:var(--forest); text-align:center; padding:120px 48px; }
+#closing .eyebrow { color:rgba(200,230,210,0.6); }
+.closing-title { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(28px,4vw,52px); color:#EAF5EE; line-height:1.25; max-width:720px; margin:0 auto 32px; }
+.closing-text { font-family:'Noto Serif KR',serif; font-size:17px; font-weight:300; line-height:2; color:rgba(200,230,210,0.65); max-width:640px; margin:0 auto 72px; }
+.closing-attrs { display:flex; gap:64px; justify-content:center; flex-wrap:wrap; }
+.attr { text-align:center; }
+.attr-icon { font-size:32px; margin-bottom:12px; }
+.attr-title { font-family:'Noto Serif KR',serif; font-size:15px; font-weight:600; color:var(--gold-light); margin-bottom:8px; }
+.attr-text { font-size:12px; color:rgba(200,230,210,0.5); line-height:1.7; max-width:140px; }
+
+/* ───── FOOTER ───── */
+/* 히어로 로고 인장 */
+.hero-logo-seal {
+  width: 72px; height: 72px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 2px 12px rgba(184,131,46,0.2));
+  animation: fadeUp 1s 0.1s ease both;
+}
+
+/* 푸터 로고 */
+.footer-logo-img {
+  width: 60px; height: 60px;
+  object-fit: contain;
+  opacity: 0.7;
+  margin-bottom: 16px;
+  mix-blend-mode: screen;
+}
+.footer-logo { font-family:'Playfair Display',serif; font-size:24px; color:var(--gold); margin-bottom:16px; }
+.footer-sub { font-size:12px; color:rgba(245,239,227,0.3); letter-spacing:0.08em; margin-bottom:8px; }
+.footer-copy { font-size:11px; color:rgba(245,239,227,0.18); letter-spacing:0.08em; }
+
+/* ───── ANIM ───── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(32px); transition:opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-delay-1 { transition-delay:0.1s; }
+.reveal-delay-2 { transition-delay:0.2s; }
+.reveal-delay-3 { transition-delay:0.3s; }
+
+/* ───── RESPONSIVE ───── */
+@media(max-width:768px){
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .container, .container-narrow { padding:0 24px; }
+  .about-layout, .timeline-grid, .story-grid, .ops-cards, .japan-body { grid-template-columns:1fr; }
+  .story-card.wide { grid-column:1; }
+  .hero-stats { gap:32px; }
+  .stat-n { font-size:40px; }
+  .voice-item { padding:28px 20px; }
+  .closing-attrs { flex-direction:column; align-items:center; }
+}
+
+/* ───── STORIES (손잡고 걷던 그날들) ───── */
+#stories { background: var(--cream); }
+.stories-year-block { margin-bottom: 96px; }
+.stories-year-header {
+  display: flex; align-items: baseline; gap: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(184,131,46,0.25);
+  margin-bottom: 40px;
+}
+.stories-year-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--gold); line-height: 1; flex-shrink: 0;
+}
+.stories-year-label { font-size: 11px; letter-spacing: 0.2em; color: var(--ink-faint); margin-bottom: 4px; }
+.stories-year-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17px; font-weight: 600; color: var(--ink-mid);
+}
+.stories-year-count {
+  margin-left: auto; font-size: 10px; letter-spacing: 0.1em;
+  color: var(--ink-faint); border: 1px solid rgba(184,131,46,0.3);
+  padding: 4px 14px; white-space: nowrap; flex-shrink: 0;
+}
+.voices-stack { display: flex; flex-direction: column; gap: 2px; }
+.vc-card {
+  background: var(--warm-white); padding: 36px 44px;
+  position: relative; overflow: hidden;
+  transition: background 0.2s;
+}
+.vc-card:nth-child(even) { background: #F0E9D8; }
+.vc-card:nth-child(even):hover { background: #E8E0CC; }
+.vc-card:hover { background: #EDE6D5; }
+.vc-card.vc-wide {
+  background: var(--forest); padding: 44px 52px;
+}
+.vc-card.vc-wide:hover { background: #3A5844; }
+.vc-card.vc-dark { background: var(--ink); }
+.vc-card.vc-dark:hover { background: #252016; }
+.vc-card.vc-poem {
+  background: linear-gradient(135deg, #F5EFE3, #EDE5D4);
+  text-align: center;
+}
+.vc-quote-mark {
+  font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700;
+  color: rgba(0,0,0,0.04); line-height: 1;
+  position: absolute; top: 20px; left: 28px; pointer-events: none;
+}
+.vc-card.vc-wide .vc-quote-mark, .vc-card.vc-dark .vc-quote-mark { color: rgba(255,255,255,0.05); }
+.vc-author { margin-bottom: 14px; }
+.vc-name {
+  font-family: 'Noto Serif KR', serif; font-size: 14px; font-weight: 700;
+  color: var(--forest); display: inline;
+}
+.vc-card.vc-wide .vc-name { color: var(--gold-light); }
+.vc-card.vc-dark .vc-name { color: var(--gold-pale); }
+.vc-role {
+  font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint);
+  margin-left: 10px;
+}
+.vc-card.vc-wide .vc-role { color: rgba(245,239,227,0.45); }
+.vc-card.vc-dark .vc-role { color: rgba(245,239,227,0.35); }
+.vc-text {
+  font-family: 'Noto Serif KR', serif; font-size: 15px;
+  line-height: 2.05; color: var(--ink-light);
+  white-space: pre-line;
+}
+.vc-card.vc-wide .vc-text { font-size: 16px; color: rgba(245,239,227,0.88); }
+.vc-card.vc-dark .vc-text { color: rgba(245,239,227,0.65); }
+.vc-card.vc-poem .vc-text { color: var(--ink-mid); }
+.vc-highlight {
+  display: block; font-style: italic;
+  font-family: 'Playfair Display', serif; font-size: 16px; line-height: 1.7;
+  color: var(--forest); border-left: 3px solid var(--gold);
+  padding-left: 18px; margin: 18px 0;
+}
+.vc-card.vc-wide .vc-highlight { color: var(--gold-light); border-left-color: var(--gold-light); }
+.vc-card.vc-dark .vc-highlight { color: var(--gold-pale); border-left-color: var(--gold-pale); }
+.story-card.dark .vc-highlight { color: var(--gold-pale); border-left-color: var(--gold-pale); }
+.vc-zoom-badge {
+  font-size: 9px; letter-spacing: 0.1em; padding: 2px 8px;
+  background: var(--forest-light); color: #fff; margin-left: 8px;
+  vertical-align: middle;
+}
+.vc-oneliner-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+.vc-oneliner {
+  background: var(--warm-white); padding: 24px 28px;
+  font-family: 'Noto Serif KR', serif; font-size: 14px;
+  line-height: 1.9; color: var(--ink-mid);
+  transition: background 0.2s;
+}
+.vc-oneliner:nth-child(even) { background: #F0E9D8; }
+.vc-oneliner:hover { background: #E8E0CC; }
+.vc-oneliner strong { font-size: 15px; color: var(--forest); display: block; margin-bottom: 4px; }
+.vc-oneliner .vc-ol-who { font-size: 11px; color: var(--ink-faint); margin-top: 10px; }
+.stories-section-divider {
+  display: flex; align-items: center; gap: 20px;
+  margin: 72px 0;
+  color: var(--ink-faint); font-size: 10px; letter-spacing: 0.2em;
+}
+.stories-section-divider::before, .stories-section-divider::after {
+  content: ''; flex: 1; height: 1px; background: rgba(184,131,46,0.2);
+}
+
+/* ───── FEATURED FOUNDER CARD ───── */
+.founder-card {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 56px 64px;
+  margin: 0 0 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+.founder-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8832e' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.founder-eyebrow {
+  font-size: 10px; letter-spacing: 0.25em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.founder-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(184,131,46,0.15); border: 1px solid rgba(184,131,46,0.3);
+  border-radius: 2px; padding: 6px 14px;
+  font-size: 11px; color: var(--gold-light); margin-bottom: 32px;
+}
+.founder-quote {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.75;
+  color: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding-left: 28px;
+  margin: 0 0 32px 0;
+}
+.founder-author {
+  font-size: 13px; color: rgba(245,239,227,0.6);
+  margin-bottom: 32px;
+}
+.founder-toggle-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent;
+  border: 1px solid rgba(184,131,46,0.5);
+  color: var(--gold-light);
+  padding: 12px 24px; border-radius: 2px;
+  font-size: 12px; letter-spacing: 0.15em;
+  cursor: pointer; transition: all 0.2s;
+}
+.founder-toggle-btn:hover { background: rgba(184,131,46,0.1); }
+.founder-toggle-btn .btn-arrow {
+  transition: transform 0.3s; display: inline-block;
+}
+.founder-toggle-btn.open .btn-arrow { transform: rotate(180deg); }
+.founder-full-text {
+  display: none;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(184,131,46,0.2);
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15px; line-height: 2;
+  color: rgba(245,239,227,0.85);
+  white-space: pre-line;
+}
+.founder-full-text.open { display: block; }
+.founder-section-title {
+  font-size: 11px; letter-spacing: 0.2em; color: var(--gold);
+  margin: 36px 0 12px 0; text-transform: uppercase;
+}
+@media(max-width:768px){
+  .founder-card { padding: 36px 24px; }
+  .founder-quote { font-size: 17px; padding-left: 20px; }
+}
+
+@media(max-width:768px){
+  .vc-oneliner-grid { grid-template-columns: 1fr; }
+  .vc-card { padding: 28px 24px; }
+  .stories-year-header { flex-wrap: wrap; }
+  .stories-year-count { margin-left: 0; }
+}
+
+/* ───── OUTREACH ───── */
+#outreach { background:var(--warm-white); }
+.outreach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:0; }
+.outreach-card { padding:48px 40px; display:flex; flex-direction:column; gap:16px; }
+.outreach-card.outreach-dark { background:var(--sky); }
+.outreach-card.outreach-forest { background:var(--forest); }
+.outreach-card.outreach-warm { background:var(--ink); }
+.outreach-badge { font-size:12px; letter-spacing:0.12em; color:rgba(255,255,255,0.45); margin-bottom:4px; }
+.outreach-title { font-family:'Playfair Display',serif; font-size:clamp(18px,2vw,26px); color:#EAF5FA; line-height:1.3; }
+.outreach-card.outreach-forest .outreach-title { color:#EAF5EE; }
+.outreach-card.outreach-warm .outreach-title { color:var(--gold-pale); }
+.outreach-tag { display:inline-block; font-size:10px; letter-spacing:0.12em; padding:4px 12px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); margin-bottom:8px; }
+.outreach-body p { font-family:'Noto Serif KR',serif; font-size:13px; line-height:2; color:rgba(255,255,255,0.6); margin-bottom:12px; }
+.outreach-body p strong { color:rgba(255,255,255,0.85); }
+.outreach-quote { font-family:'Noto Serif KR',serif; font-style:italic; font-size:13px; line-height:1.9; color:rgba(255,255,255,0.8); border-left:2px solid rgba(255,255,255,0.3); padding-left:16px; margin:16px 0; }
+.outreach-cite { font-size:11px; letter-spacing:0.08em; color:rgba(255,255,255,0.3); margin-top:4px; }
+@media(max-width:768px){
+  .outreach-grid { grid-template-columns:1fr; }
+}
+
+/* ── 타임라인 (꿈꾸는교회 카드 전용) ── */
+.outreach-timeline { margin:16px 0 4px; display:flex; flex-direction:column; position:relative; padding-left:14px; }
+.outreach-timeline::before { content:''; position:absolute; left:0; top:4px; bottom:4px; width:1px; background:rgba(255,255,255,0.18); }
+.otl-item { padding:9px 0 9px 18px; position:relative; }
+.otl-item::before { content:''; position:absolute; left:-4px; top:15px; width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.35); }
+.otl-item.otl-pause::before { background:rgba(255,255,255,0.18); }
+.otl-item.otl-highlight::before { background:#a8d5a2; }
+.otl-year { font-size:10px; letter-spacing:.1em; color:rgba(255,255,255,.4); font-weight:700; display:block; margin-bottom:2px; }
+.otl-item.otl-pause .otl-year { color:rgba(255,255,255,.25); }
+.otl-item.otl-highlight .otl-year { color:#a8d5a2; }
+.otl-text { font-family:'Noto Serif KR',serif; font-size:12.5px; line-height:1.8; color:rgba(255,255,255,.6); margin:0; }
+.otl-item.otl-pause .otl-text { color:rgba(255,255,255,.35); font-style:italic; }
+.otl-item.otl-highlight .otl-text { color:rgba(255,255,255,.82); }
+
+/* ── 외부 참가자 증언 블록 ── */
+.outreach-witness { margin-top:60px; background:#fff; border-radius:2px; overflow:hidden; display:grid; grid-template-columns:1fr 2fr; }
+.outreach-witness-label { background:var(--sky); padding:48px 36px; display:flex; flex-direction:column; justify-content:center; gap:12px; }
+.outreach-witness-label .eyebrow { font-size:11px; letter-spacing:.14em; color:rgba(255,255,255,.5); }
+.outreach-witness-label h3 { font-family:'Playfair Display',serif; font-size:22px; color:#EAF5FA; line-height:1.35; margin:0; }
+.outreach-witness-label > p { font-family:'Noto Serif KR',serif; font-size:12px; line-height:1.9; color:rgba(255,255,255,.5); margin:0; }
+.outreach-witness-body { padding:48px 52px; }
+.ow-big-quote { font-family:'Noto Serif KR',serif; font-size:15px; line-height:2.1; color:var(--ink); margin-bottom:18px; }
+.ow-big-quote em { font-style:normal; font-weight:700; color:var(--sky); }
+.outreach-witness-body .ow-p { font-family:'Noto Serif KR',serif; font-size:13px; line-height:2; color:var(--muted); margin-bottom:10px; }
+.outreach-witness-body .ow-scripture { font-family:'Noto Serif KR',serif; font-size:13px; font-style:italic; line-height:1.9; color:var(--sky); border-left:2px solid var(--sky); padding-left:16px; margin:0 0 20px; }
+.outreach-witness-cite { font-size:11px; letter-spacing:.08em; color:var(--muted); margin-top:18px; display:block; opacity:.6; }
+@media(max-width:768px){
+  .outreach-witness { grid-template-columns:1fr; }
+  .outreach-witness-body { padding:32px 28px; }
+}
+
+/* ── nav: 태블릿 이상에서 항상 메뉴 표시 ── */
+@media(min-width:769px){
+  .nav-links { display:flex !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Dream Daddy Camp</div>
+  <ul class="nav-links">
+    <li><a href="#about">대디캠프란</a></li>
+    <li><a href="#timeline">15년의 역사</a></li>
+    <li><a href="#stories">이야기들</a></li>
+    <li><a href="#outreach">세상으로의 확산</a></li>
+    <li><a href="#voices">손잡고 걷던 그날들</a></li>
+    <li><a href="#operations">운영 가이드</a></li>
+    <li><a href="#gallery-videos">갤러리</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- 모바일 드롭다운 메뉴 -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">대디캠프란</a>
+  <a href="#timeline" onclick="closeMobileMenu()">15년의 역사</a>
+  <a href="#stories" onclick="closeMobileMenu()">이야기들</a>
+  <a href="#outreach" onclick="closeMobileMenu()">세상으로의 확산</a>
+  <a href="#voices" onclick="closeMobileMenu()">손잡고 걷던 그날들</a>
+  <a href="#operations" onclick="closeMobileMenu()">운영 가이드</a>
+  <a href="#gallery-videos" onclick="closeMobileMenu()">갤러리</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-glow"></div>
+  <img src="data:image/png;base64,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" class="hero-logo-seal" alt="Dream Daddy Club">
+  <p class="hero-eyebrow">2010~2025 · 15 YEARS OF LOVE</p>
+  <h1 class="hero-title">
+    Dream<br>
+    <span class="italic">Daddy</span>
+    <span class="sub">Camp</span>
+  </h1>
+  <p class="hero-kor">꿈의학교 아버지·자녀 1박2일 캠프</p>
+  <p class="hero-desc">아빠와 꿈쟁이가 함께 쓴 가장 아름다운 이야기</p>
+  <div class="hero-line"></div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-n">15</div>
+      <div class="stat-l">YEARS</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">700+</div>
+      <div class="stat-l">FAMILIES</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">∞</div>
+      <div class="stat-l">STORIES</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">What is Daddy Camp</span>
+    <h2 class="section-title reveal">대디캠프란 무엇인가</h2>
+    <p class="section-lead reveal">
+      매년 5월, 꿈의학교 운동장에 텐트가 들어선다. 아버지와 자녀가 1박2일을 함께 보내며 평소 하지 못했던 말들을 나눈다. 단순한 캠핑이 아니다. 찬양과 회복이 있는 거룩한 자리다. 대디캠프는 예배다.
+    </p>
+    <div class="about-layout">
+      <div class="reveal">
+        <div class="prose">
+          <p>대디캠프는 2010년 꿈의학교 학부모들이 자발적으로 시작한 프로그램이다. 두란노 아버지학교의 정신을 바탕으로 꿈의학교만의 색깔로 발전해 온 이 캠프는, 교사나 학교가 주도하는 것이 아니라 <strong>학부모가 직접 기획하고 운영한다</strong>는 점에서 독보적이다.</p>
+          <p>꿈의학교 명예교장 이종삼 목사는 처음 이 소식을 들었을 때 의구심이 들었다고 했다. "아빠와 자녀가 함께 학교에서 숙박하는 캠프를 학부모들이 직접 주관한다고? 몇 번 하다가 말겠지" — 그 캠프가 이제 15년의 전통이 되었다.</p>
+          <p>대디캠프의 본질은 <strong>예배</strong>다. 아빠와 자녀가 함께 하나님 앞에 나아가 아버지 하나님의 마음을 배우고, 그 마음을 자녀에게 전하는 거룩한 시간. 졸업생 학부모들이 스텝으로 돌아와 후배 가정들을 섬기고, 그 은혜를 받은 가정이 다시 스텝이 되는 아름다운 순환이 15년째 이어지고 있다.</p>
+        </div>
+      </div>
+      <div class="pillar-list reveal reveal-delay-1">
+        <div class="pillar">
+          <div class="pillar-icon">⛺</div>
+          <div>
+            <div class="pillar-title">텐트와 전투식량</div>
+            <div class="pillar-text">운동장에 텐트를 치고, 전투식량을 나눠 먹으며, 아버지와 자녀가 몸으로 함께 뒹군다. 텐트 안 밤의 대화가 진짜 시작이다.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🙏</div>
+          <div>
+            <div class="pillar-title">예배와 애찬식</div>
+            <div class="pillar-text">찬양·특강·테이블 나눔·애찬식으로 이어지는 예배의 시간. 예수님의 피와 살을 나누며 부자(父子)가 함께 하나님 앞에 선다.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🎭</div>
+          <div>
+            <div class="pillar-title">아빠들의 율동</div>
+            <div class="pillar-text">뽀글머리 가발과 알록달록 팬츠로 무장한 아버지들이 아이돌 못지않은 무대를 펼친다. 아이들의 함박웃음이 첫 번째 선물이다.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💌</div>
+          <div>
+            <div class="pillar-title">평생약속</div>
+            <div class="pillar-text">아버지와 자녀가 함께 "평생약속"을 정하고 액자에 담아 돌아간다. 수년이 지나도 그 약속은 벽에 걸려 두 사람을 기억하게 한다.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌱</div>
+          <div>
+            <div class="pillar-title">졸업생 섬김의 전통</div>
+            <div class="pillar-text">자녀가 졸업해도 스텝으로 돌아오는 아버지들. "우리가 먼저 은혜를 받았으니 다른 가정도 이 은혜를 누려야 한다"는 마음이 15년을 이었다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pull-quote reveal">
+      <blockquote>"이런 아버지들이 계시는 학교는 세상 어디에도 없습니다. 꿈의학교 말고는…"</blockquote>
+      <cite>— 꿈의학교 교사 '깊은님', 20년간 학생들의 회복을 곁에서 지켜보며</cite>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">15 Years of History</span>
+    <h2 class="section-title reveal">15년의 발자취</h2>
+    <p class="section-lead reveal">
+      2010년 만리포에서 시작된 작은 캠프가, 어떻게 꿈의학교의 가장 특별한 전통이 되었는가.
+    </p>
+    <div class="timeline-big-quote reveal">
+      <p>"저게 저절로 붉어질 리는 없다 / 저 안에 태풍 몇 개 / 저 안에 천둥 몇 개 / 저 안에 벼락 몇 개"</p>
+      <span>— 정석주 시인 '대추 한알' 중에서 · 6대 드림대디클럽 대표 김학일이 대디캠프를 묘사하며 인용한 시</span>
+    </div>
+    <div class="timeline-grid">
+      <div class="tl">
+        <div class="tl-item reveal">
+          <div class="tl-year">2010</div>
+          <div class="tl-title">제1회 · 천안 국립청소년수련원</div>
+          <div class="tl-text">천안 국립청소년수련원에서 제1회 대디캠프 개최. 학부모들이 자발적으로 기획하고 운영하는 방식으로 시작. "교사들에게 부담을 주지 않겠다"는 원칙이 처음부터 세워졌다.</div>
+          <div class="tl-tags"><span class="tl-tag">시작</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2011</div>
+          <div class="tl-title">제2회 · 태안 만리포수련원</div>
+          <div class="tl-text">서해 바닷가 태안 만리포수련원에서 제2회 진행. 파도 소리를 들으며 아버지와 자녀가 밤을 지새웠다.</div>
+          <div class="tl-tags"><span class="tl-tag">성장기</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2012–2013</div>
+          <div class="tl-title">제3·4회 · 횡성 숲체원</div>
+          <div class="tl-text">강원도 횡성 숲체원으로 이동. 맑은 공기와 넓은 자연 속에서 아버지와 자녀의 시간이 쌓여 갔다. 영상 기록의 전통이 이 시기에 싹을 틔웠다.</div>
+          <div class="tl-tags"><span class="tl-tag">성장기</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2014</div>
+          <div class="tl-title">꿈의학교 캠퍼스로 귀환</div>
+          <div class="tl-text">숲체원 예약 실패를 계기로 꿈의학교 캠퍼스 내에서 진행. 운동장 텐트 캠핑이라는 지금의 대디캠프 모습이 완성되었다. 사전인터뷰 문화도 이 시기에 정착.</div>
+          <div class="tl-tags"><span class="tl-tag">전환점</span><span class="tl-tag">현재형 확립</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2015–2016</div>
+          <div class="tl-title">🗾 일본 동경 해외 아웃리치</div>
+          <div class="tl-text">꿈의학교 출신 교사 이재은 선생님의 요청으로, 동경 YICS(요한국제기독학교)에서 해외 대디캠프 1회 진행(2015년 10월). 이듬해 2016년에는 후속 프로그램으로 꿈의학교 독서캠프를 열어 은혜를 이어갔다. "어벤져스 팀"이 바다를 건넌 첫 실험이었다.</div>
+          <div class="tl-tags"><span class="tl-tag">해외 진출</span><span class="tl-tag">특별</span></div>
+        </div>
+      </div>
+      <div class="tl" style="padding-top:60px">
+        <div class="tl-item reveal">
+          <div class="tl-year">2017–2019</div>
+          <div class="tl-title">안정과 완성 + 교회 확산</div>
+          <div class="tl-text">매년 60가정 이상이 참가하는 규모로 성장. 워크북, 평생약속, 테이블 나눔, 애찬식 등 핵심 프로그램이 완성 단계에 접어들었다. 전통과 시스템이 동시에 무르익는 시기. 1기 공동대표 양진석의 비전으로 <strong>김포 꿈꾸는교회(前 전원교회)에 대디캠프가 이식</strong>되어, 꿈교 DNA가 교회 공동체에 뿌리를 내리기 시작했다.</div>
+          <div class="tl-tags"><span class="tl-tag">정착기</span><span class="tl-tag">완성</span><span class="tl-tag">김포 꿈꾸는교회</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2020</div>
+          <div class="tl-title">코로나로 인한 첫 중단</div>
+          <div class="tl-text">COVID-19 팬데믹으로 15년 역사 중 처음으로 캠프가 취소되었다. 많은 아버지와 자녀들이 서로를 그리워하며 그 해를 보냈다.</div>
+          <div class="tl-tags"><span class="tl-tag">공백</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2021–2022</div>
+          <div class="tl-title">줌 대디캠프 — 집에서 피운 불씨</div>
+          <div class="tl-text">아버지들의 의지로 온라인 캠프 개최. 집으로 택배를 보내고 줌으로 연결했다. "대디쉐프", "투어&데이트 미션", 각자 촬영한 율동영상 합편 — 코로나도 막지 못한 사랑.</div>
+          <div class="tl-tags"><span class="tl-tag">혁신</span><span class="tl-tag">온라인</span></div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-year">2023–2025</div>
+          <div class="tl-title">회복과 15주년 · 사회 확산</div>
+          <div class="tl-text">다시 만나는 현장 캠프. 2024년 충주 <strong>깊은산속 옹달샘</strong>에서 두란노 아버지학교·드림대디클럽·서초구 아버지센터가 협력하는 '유스캠프 위드 대디'가 탄생하며 대디캠프 DNA가 사회로 확산. 2025년 15주년을 맞이한 대디캠프는 이 웹북을 통해 그 역사를 기록하고, 다음 세대에게 전통을 넘긴다.</div>
+          <div class="tl-tags"><span class="tl-tag">15주년</span><span class="tl-tag">깊은산속옹달샘</span><span class="tl-tag">현재</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section id="stories" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">People's Stories</span>
+    <h2 class="section-title reveal">은혜의 고백</h2>
+    <p class="section-lead reveal">
+      대디캠프를 경험한 아버지들, 어머니, 교사, 졸업생들이 직접 쓴 이야기. 각자의 자리에서 목격하고 체험한 은혜의 고백.
+    </p>
+  </div>
+  <div class="story-grid">
+
+    <!-- ★ FEATURED: 창설자 김봉하 전문 -->
+    <div class="founder-card reveal" style="grid-column:1/-1;">
+      <div class="founder-eyebrow">✦ Creator's Story · 창설자의 고백</div>
+      <div class="founder-badge">
+        <span>🎖</span>
+        드림대디클럽 1기 대표 · 드림패밀리멤버스 1기 공동대표 · 대디캠프 창설자
+      </div>
+      <blockquote class="founder-quote">
+"인생 60이 된 지금, 내 인생에서 가장 잘한 일 하나를 꼽으라면
+나는 주저하지 않고 우리 딸들이 다닌 학교에 대디캠프를 시작한 것이라고 말할 수 있다.
+하나님의 은혜가 아닐 수 없다."
+      </blockquote>
+      <div class="founder-author">빙그레·기쁨주는 대디 &nbsp;|&nbsp; 김봉하</div>
+      <button class="founder-toggle-btn" onclick="toggleFounder(this)">
+        전문 읽기 — 대디캠프는 왜 시작되었나 <span class="btn-arrow">▼</span>
+      </button>
+
+      <div class="founder-full-text">
+<div class="founder-section-title">우리는 왜 대디캠프를 시작하였나?</div>
+2005년 쯤으로 기억한다. 여름 방학 기간에 온누리교회에서 아빠와 아들 둘만의 캠프를 수 년간 개최 하였다. SBS에 여러번 방송도 되었다. 나도 가고 싶었다. 그러나 갈 수가 없었다. 딸 둘의 아빠이기 때문이었다.
+
+아빠와 딸의 캠프도 개최해 달라고 관계자를 몇 차례 졸랐다. 드디어 2009년 12월 아빠와 딸 둘만의 캠프가 열린다고 모집 공고가 떴다. 기다리고 기다리던 캠프라 바로 신청하였다. 당시 중3이던 큰딸 빙그레와 가고 싶었다. 사춘기 시기인 딸은 단칼에 절대 안 간다고 했다. 당시 초등학교 4학년이던 둘째 기쁨주는을 꼬셔서 같이 갔다.
+
+2009년 겨울 강원도 횡성 숲체원에서 보낸 2박 3일의 시간은 꿈만 같았다. 당시 두란노 아버지학교 스태프로 활동하고 있던 나는, 아버지와 자녀가 함께 하는 프로그램이 없어 목말라 하던 차에 기가 막힌 프로그램을 경험하였다. 바로 이거다 하는 마음이 들었고, 이것을 꿈의학교에서 큰딸 빙그레와 경험하고 싶었다. 아니, 사춘기 큰딸과 놀고 싶었다.
+
+온누리팀에게 꿈의학교에 와서 캠프를 열어 줄 것을 요청하였다. 사역 요청이 너무 많아 바쁘다며 보기 좋게 거절 당했다. 그러나 포기할 수는 없었다. 당시 후배 학년이었던 승리한·포이에마 대디와 모종의 계획을 세웠다. 프로그램을 기획하고 같이 할 수 있는 학부모 섭외에 들어갔다.
+
+5가정 10명의 대디맘이 스태프로 모였다. 파란, 현명한, 저스틴, 승리한, 빙그레 대디맘. 반대 의견도 많았다. 학교도 협조가 쉽지 않았다. 모이지 않을 거라는 것이었다. 우리는 모여 기도했고 차근차근 준비를 해 나갔다.
+
+개최 두 달을 앞두고 조심스레 학교 게시판에 공지를 올렸다. 캠프 참가 신청이 저조할 것이라는 우려와 예상을 깨고, 당시 교장이셨던 의로운 님을 포함 무려 71가정 141명의 대디와 꿈쟁이가 신청하였다. 이건 지난 15년 대디캠프 역사에 있어 최고의 참석자 숫자이다. 그리고 최저 스태프 가정 숫자이다.
+
+<div class="founder-section-title">2010년 5월 21~22일 — 역사적인 첫날</div>
+지금 생각해도 가슴이 콩닥거리고 심장이 뛴다. 돌이켜 보면, 인생 60이 된 지금 내 인생에서 가장 잘한 일 하나를 꼽으라면 나는 주저하지 않고 우리 딸들이 다닌 학교에 대디캠프를 시작한 것이라고 말할 수 있다. 하나님의 은혜가 아닐 수 없다.
+
+대디캠프 첫날이 석가탄신일이었다. 연휴라 길이 엄청 밀렸다. 서울에서 6시간 걸려 참석한 아빠도 계셨다. 꿈쟁이들은 학교에서 단체 버스로 왔고, 아빠들은 승용차로 개별 참석하였다. 나는 빙그레와 참석자 겸 진행자로 함께 하였다. 드디어 고1이 된 큰딸 빙그레와 1박 2일 맘껏 놀았다. Dream Camp with Daddy 2010은 그렇게 시작 되었다. 참석자 대디들의 반응은 상상 이상이었고 스태프 대디맘도 행복했다.
+
+<div class="founder-section-title">연도별 발자취 — 실패에서 배우며</div>
+2011년 두 번째 캠프. 지원자도 잘 안 모이고 중간에 포기할 뻔 했다. 그때 포기했더라면 지금의 대디캠프는 없었을 것이다. 역대 가장 실패한 캠프였다. 그러나 돌아보니 실패가 실패가 아니었고, 경험이었다.
+
+2012~2014년은 강원도 횡성 숲체원에서 진행되었다. 우리의 취지를 잘 아는 숲체원에서 비용도 많이 도와주고 프로그램 수준이 높아 정말 좋았다. 사랑이 많은 맘들은 숲속의 집에서 몰래 간식을 준비하다 쫓겨날 뻔도 했다.
+
+숲체원에 더 이상 부담을 드리는 게 부담스러워 고민하고 기도하다, 아쉽지만 꿈교에서 개최하기로 하였다. 꿈교 기숙사에서 아빠와 꿈쟁이가 함께 생활해보는 컨셉을 기획하였으나, 내 침대에 누군가가 와서 자는 걸 꿈쟁이가 싫어한다는 사감님의 고견을 듣고 운동장에서 텐트를 치기로 의견을 모았다. 텐트 렌트 업체를 알아보고 오늘까지 이 방식으로 진행해 오고 있다.
+
+<div class="founder-section-title">애찬식 — 캠프의 클라이맥스</div>
+대디캠프의 클라이맥스는 첫날 저녁 드림콘서트를 마치고 하는 애찬식이다. 애찬 테이블을 마련하고 대디와 꿈쟁이가 잔을 서로 나눈다. 그리고 서로를 위한 기도의 시간을 가진다. 아빠가 먼저 자녀를 축복하는 기도를 한다. 그리고 조용히 자녀 앞에 무릎을 꿇는다. 용서를 구하는 시간이다. 꿈쟁이들이 어쩔 줄 몰라한다. 꿈쟁이들도 아빠 앞에 무릎을 꿇고 마주 앉는다. 아빠가 자녀를 품에 안고 서로의 심장 소리를 느껴본다. 기도는 계속된다. 여기저기서 대디와 꿈쟁이의 울음 소리와 눈물이 보인다. 치유의 시간이다. 회복의 시간이다. 성령이 임재하시는 시간이다.
+
+주여 아비들의 회개를 받아주소서.
+주여 꿈쟁이들의 마음을 만져 주소서.
+주여 아비의 마음을 자녀에게로 돌이키게 하고, 자녀들의 마음을 아비에게로 돌이키게 하여 주소서.
+그리하여 꿈쟁이들이 그 사랑으로 세계를 품게 하소서.
+
+<div class="founder-section-title">맘캠프의 탄생 (2012)</div>
+이런 저런 사정으로 아빠와 대디캠프를 하지 못하는 꿈쟁이들이 있다. 그들을 위해 맘캠프를 개최하기로 했다. 그러나 어머니회 대표가 반대를 했다. 왜냐하면 지금도 맘들이 잔소리를 해서 문제인데, 캠프에까지 와서 잔소리를 하면 어떡하냐는 우려였다.
+
+그때 넓은샘께서 그럼 엄마들을 잔소리 못 하도록 하는 교육을 시키면 되겠네요라고 하셨다. 그래서 대디캠프는 아빠와 자녀를 붙여 놓고, 맘캠프는 떨어뜨려 놓는 컨셉이 탄생되었다.
+
+맘캠프 최고는 아침 식사 시간에 아빠들이 브런치를 서브해 주는 것이었다. 집에서 늘 남편과 자녀들의 식사를 챙기시는 입장에서 대디들이 웨이터 복장으로 서빙해주는 음식이 그렇게 맛있었나 보다. 그렇게 2012년 가을에 첫 시작한 맘캠프는 2015… 2017… 2019… 2023년을 거쳐 2025년 올해 6번째를 맞이하였다.
+
+<div class="founder-section-title">드림대디클럽 창립 (2014)</div>
+2014년 드림대디클럽을 결성하기로 하였다. 대디캠프 맘캠프를 넘어 본격적으로 아빠들이 중심이 되어 꿈교를 섬기기로, 기독 학부모교육을 시작해 보기로 하였다. 그리고 꿈교를 넘어 세상을 섬기기로 하였다.
+
+2014년 6월 21일 창립 예배를 분당 꿈꾸는 교회에서 가졌다. 드림대디클럽 창립 정신을 이렇게 선포하였다: "꿈의학교 졸업생 및 재학생 아버지들의 유대 강화와 학교 발전에 적극적이고 직접적으로 도움을 주며 이웃과 사회에 하나님의 사랑을 나눠주는 꿈의학교 아버지들의 모임."
+
+2018년 3월 졸업생 대디맘들의 모임인 드림패밀리멤버스가 발족되면서, 현재는 재학생 대디들만의 모임이 되고 있다.
+
+<div class="founder-section-title">드림대디 1 · 2 · 3</div>
+한 사람의 인생에서 아버지의 존재는 너무나 중요하다. 어머니가 아닌 아버지들만이 줄 수 있는 그 무엇, 이를 파더 이펙트라고 한다. 우리는 단순히 좋은 아버지를 넘어 건강한 사회를 위해 대디캠프를 시작하였다.
+
+드림대디가 이랬으면 좋겠다는 선배 대디의 마음을 담아 전한다.
+
+1. 꿈쟁이와 시간을 함께하는 아빠
+2. 꿈쟁이의 엄마인 아내와 사이가 좋은 아빠
+3. 꿈쟁이의 미래 인생 롤모델이 되어 주는 아빠
+      </div>
+    </div>
+
+
+    <div class="story-card wide reveal">
+      <div class="story-num">01</div>
+      <div class="story-meta">꿈지기 이종삼 · 꿈의학교 명예교장 · 교감·교장 16년 역임</div>
+      <p class="story-text" style="white-space:pre-line">교감 시절, 아버지들이 주관하여 대디캠프를 진행한다는 소식을 처음 들었을 때는 의구심이 들었습니다. "아빠와 자녀가 함께 학교에서 숙박하는 캠프를 학부모들이 직접 주관한다고?" 몇 번 하다가 말겠지 싶었던 그 프로그램이, 이제는 꿈의학교의 가장 특별한 전통이 되었습니다. 대안학교에서 학부모가 교육의 객체가 아닌 주체가 될 수 있음을, 대디캠프는 처음부터 몸으로 증명해 보였습니다.
+
+꿈의학교는 모든 학생이 기숙사 생활을 하기 때문에, 아빠와 자녀들이 만날 수 있는 시간은 주말이나 방학 때로 제한됩니다. 그렇기에 1박 2일의 대디캠프는 더욱 소중한 의미를 갖습니다. 대디캠프가 특별한 이유는 단순한 체험 활동이 아니라 '예배'이기 때문입니다. 아빠와 자녀가 함께 하나님 앞에 나아가 아버지 하나님의 마음을 배우고, 그 마음을 자녀에게 전하는 거룩한 시간입니다.
+
+기숙사에서 평일을 보내는 아이들은 한 주가 지나도록 아버지 얼굴을 보지 못하기도 합니다. 그 거리가 서운함이 되고, 서운함이 쌓이면 '아빠는 바쁜 사람'이라는 벽이 생깁니다. 대디캠프는 그 벽 앞에서 아버지가 먼저 한 발을 내딛게 하는 자리입니다. 투박하게 텐트 폴대를 꽂는 손, 전투식량 봉지를 뜯으며 함께 웃는 그 순간들이 말보다 먼저 벽을 무너뜨립니다. 교장으로서 15년을 지켜보며 깨달은 것은 단 하나입니다. 아버지가 '시간을 냈다'는 사실 그 자체가 자녀에게는 가장 강력한 사랑의 언어라는 것입니다.
+
+그런데 대디캠프가 진행되는 동안, 우리는 작은 마음들의 아픔을 보게 되었습니다. 아빠를 일찍 여의고 엄마와 살아가는 아이들, 부모님이 이혼하여 아빠와 떨어져 지내는 아이들이 있었습니다. 어떤 아이는 조용히 구석에 앉아 친구들을 바라보기만 했고, 어떤 아이는 억지로 웃으며 괜찮은 척했지만 그 눈빛에는 그리움과 아픔이 가득했습니다. 캠프가 끝날 때쯤 한 아이가 다가와 작은 목소리로 말했습니다. "선생님, 저도 아빠와 이런 시간을 보내고 싶어요." 그 순간, 맘캠프가 시작되었습니다.
+
+맘캠프는 대디캠프가 보지 못했던 빈자리를 채우기 위해 태어났습니다. 한 아이의 작은 고백이 하나의 캠프를 낳은 것입니다. 이것이 꿈의학교 공동체의 힘입니다. 필요를 외면하지 않고, 할 수 있는 사람들이 나서서 채워가는 문화. 아버지들이 직접 기획하고 어머니 스텝들이 함께 섬기며 만들어낸 맘캠프 역시 이제 꿈의학교의 빠질 수 없는 전통이 되었습니다.
+
+나의 세 가지 간절한 소망이 있습니다. 믿는 아빠들이 하나님 아버지의 사랑을 더 깊이 체험하는 것, 아직 믿지 않는 아빠들이 대디캠프의 예배를 통해 하나님을 만나는 계기를 얻는 것, 그리고 이 땅에 꿈의학교가 존재하는 동안 대디캠프와 맘캠프가 영원히 지속되는 것입니다. 이 소망은 나 혼자의 것이 아닙니다. 새벽부터 준비하고 밤늦게까지 정리하던 수많은 아버지들의 땀 속에 이미 이 소망이 담겨 있었습니다.</p>
+      <div class="story-author">꿈지기 이종삼 (꿈의학교 명예교장)</div>
+    </div>
+
+    <!-- 02 깊은님 교사 -->
+    <div class="story-card dark reveal">
+      <div class="story-num">02</div>
+      <div class="story-meta">깊은님 · 꿈의학교 교사 · 20년간 아이들의 회복을 곁에서 지켜보며</div>
+      <p class="story-text" style="white-space:pre-line">지난 20여 년간 꿈의학교 교단에 서며 수많은 학생들을 만났습니다. 사춘기라는 격변의 시기에 정서적 어려움과 방황의 그림자에 갇힌 아이들의 아픔의 뿌리를 찾아 들어가면, 놀랍게도 그 근원은 대부분 '아버지'라는 존재의 부재 또는 단절된 관계의 그림자였습니다.
+
+학교 폭력 문제로 상담실을 찾은 아이, 이유 없는 불안감에 학업에 집중하지 못하는 아이. 그들의 마음속에는 공통적으로 '가장 중요한 사람으로부터 인정받지 못한다'는 깊은 결핍이 자리하고 있었습니다. 그래서 저는 늘 마음속으로 기도했습니다. '하나님, 우리 아이들의 아픔을 치유하고 상처 입은 관계를 회복시켜 주실 귀한 도구를 허락해 주십시오.'
+
+그 기도의 응답이 대디캠프였습니다. 몇 년 전, 처음 참여했던 한 아버지가 텐트 하나 제대로 치지 못해 땀을 뻘뻘 흘리고 있었습니다. 그때 한 선배 아버지가 다가와 조용히 말했습니다. "중요한 건 텐트가 아니라 아이와 함께 있는 시간 그 자체입니다." 그 위로에 용기를 얻은 그 아버지는 이후 핵심 봉사자로 성장하여, 지금은 또 다른 초보 아버지를 돕고 있습니다.
+
+교사로서 제가 대디캠프에서 목격한 가장 놀라운 장면은 예배 시간이었습니다. 사회에서는 누가 봐도 단단하고 강해 보이는 아버지들이, 자녀 앞에서 조용히 눈물을 닦는 모습. 아이들은 그 장면을 통해 아버지도 하나님 앞에 무릎을 꿇는 한 사람의 인간임을 처음으로 목격합니다. 그 경험은 어떤 설교보다도, 어떤 교과서 한 줄보다도 깊이 아이들의 가슴에 새겨집니다. "아빠도 기도하는 사람이었구나." 이 한 가지 인식의 변화가 관계의 전부를 바꾸기도 합니다.
+
+캠프에 참여하기 전 늘 위축되어 있던 아이가, 캠프 이후 환하게 웃으며 "선생님, 저 이제 괜찮아요. 아빠랑 다 이야기했어요"라고 말할 때의 기쁨은 그 무엇과도 비교할 수 없습니다. 저는 20년 동안 다양한 교육 현장을 보아왔지만, 아버지와 자녀가 함께 하룻밤을 보낸 뒤 달라지는 아이의 눈빛만큼 강렬한 교육적 결과를 본 적이 없습니다.
+
+이런 아버지들이 계시는 학교는 세상 어디에도 없습니다. 꿈의학교 말고는. 그리고 이 전통이 앞으로도 이어진다면, 꿈의학교를 거쳐 간 수천 명의 아이들은 '아버지에게 인정받았던 그 하룻밤'을 평생의 뿌리로 삼고 세상을 살아가게 될 것입니다.</p>
+      <div class="story-author">깊은님 (꿈의학교 교사, 20년)</div>
+    </div>
+
+    <!-- 03 사무엘 교사 -->
+    <div class="story-card reveal">
+      <div class="story-num">03</div>
+      <div class="story-meta">사무엘님 · 꿈의학교 교사 · 세 자녀와 각각 대디캠프를 경험하다</div>
+      <p class="story-text" style="white-space:pre-line">2011년 2월, 신입생 학부모 캠프 당일 처음 받아든 꿈의학교 교육계획서를 읽으면서, 저는 '이곳이야말로 내가 진정 있어야 할 곳'이라는 확신을 얻었습니다. 알지 못하는 고향을 찾아 평생을 헤매다가 마침내 고향에 도착한 듯한 느낌이었습니다. 그 느낌은 13년이 지난 지금도 변하지 않았습니다.
+
+행정실장이던 시절, 솔직히 속으로 생각했습니다. "대디캠프, 몇 년 하다가 그만두겠지." 하지만 대디캠프는 멈추지 않았습니다. 제 생각이 완전히 바뀐 것은 한 장면 때문이었습니다. 고2, 고3 때 캠프에 참여한 한 꿈쟁이가 소감문에서 '용서할 수 없는 아버지'에 대한 분노를 쏟아냈습니다. 아들의 글을 듣던 아버지가 용서를 구했습니다. 그 순간, 대디캠프가 가장 중요한 교육과정임을 깨달았습니다.
+
+그 아버지와 아들이 텐트 앞에서 서로를 끌어안던 장면을 저는 지금도 잊지 못합니다. 어떤 수업도, 어떤 상담도 하지 못했던 일이 1박 2일 안에 일어났습니다. 사람이 바뀌는 데 필요한 것은 거창한 프로그램이 아니라, 진심으로 귀를 기울여줄 누군가와 함께하는 시간임을 그날 배웠습니다. 대디캠프는 그 시간을 억지로 만들어주는 것이 아니라 자연스럽게 열어주는 장치입니다.
+
+저는 세 아이와 각각 대디캠프를 했습니다. 큰아이와는 다른 아버지들과의 유대가 선물이었고, 둘째와는 텐트 안에서 미처 못 나눴던 깊은 대화를 했습니다. 막내 딸과는 어둠 속 텐트에서 이런 질문을 건넸습니다. "서영아, 너한테 엄마는 어떤 사람이야?" "엄마? 좋은 사람이지." 짧고 단호한 그 대답에 한동안 아무 말도 할 수 없었습니다. 그 단순한 고백이 오랫동안 마음에 남습니다.
+
+세 번의 캠프를 돌아보면, 아이들이 저를 훈련시켰다는 생각이 듭니다. 큰아이와는 함께 불편함을 견디는 법을, 둘째와는 침묵 속에서도 함께 있는 법을, 막내와는 간결한 말 한마디의 무게를 배웠습니다. 아버지 됨이란 가르치는 자리가 아니라 배우는 자리임을, 대디캠프는 매번 새롭게 가르쳐주었습니다.
+
+이제 저는 교사로서 대디캠프를 바라보지 않습니다. 한 아버지로서, 이 캠프가 없었다면 그냥 지나쳤을 수많은 순간들을 선물받은 사람으로서 바라봅니다. 꿈의학교에서 오래 일한 것이 자랑스러운 이유 중 하나가 바로 이것입니다. 이 학교에서 나는 좋은 교사이기 이전에, 조금 더 나은 아버지가 될 수 있었습니다.</p>
+      <div class="story-author">사무엘님 (꿈의학교 교사)</div>
+    </div>
+
+    <!-- 04 꿈마당 박희덕 DFM 1기 공동대표 -->
+    <div class="story-card wide reveal">
+      <div class="story-num">04</div>
+      <div class="story-meta">꿈마당 박희덕 · 드림패밀리멤버스(DFM) 1기 공동대표 · 꿈의학교 제2대 이사장 · 두 아들의 아버지</div>
+      <p class="story-text" style="white-space:pre-line">큰아이가 일반 중학교에 다니던 시절, 친구와의 작은 다툼 끝에 수술 부위가 다쳐 다시 입원했습니다. 그 사건을 계기로 "이대로는 안 된다"는 결심과 함께 기독교 대안학교를 찾아 나섰습니다. 투자를 업으로 삼아온 내가 그때 처음 깨달은 것이 있다면, 진정한 투자는 자녀의 영혼과 인격에 대한 투자라는 사실이었습니다.
+
+겉으로 보기에는 아버지와 자녀가 함께하는 단순한 활동처럼 보일지 모릅니다. 그러나 대디캠프의 본질은 하나님 아버지의 사랑을 배우고 실천하는 예배의 자리입니다. 많은 아이들이 마음 깊은 곳에 '아버지에게 충분히 인정받지 못했다'는 결핍을 숨기고 살아갑니다.
+
+투자의 언어로 말하자면, 대디캠프는 ROI가 가장 높은 투자입니다. 1박 2일의 시간과 약간의 비용을 들여, 평생 자녀의 마음속에 남는 기억을 심습니다. 어떤 부동산도, 어떤 주식도 그 수익률을 따라오지 못합니다. 그러나 이 투자에는 전제 조건이 하나 있습니다. 아버지가 '진짜'여야 한다는 것입니다. 연출된 친절이나 의무감으로 간 캠프에서는 아무것도 피어나지 않습니다. 텐트 안에서 손을 잡고 기도할 때, 그 기도가 진심이어야 아이의 마음이 열립니다.
+
+텐트를 함께 치고, 땀 흘리며 웃고, 눈을 마주치며 대화하는 단순한 일상 속에서 보이지 않던 벽이 서서히 허물어집니다. 밤이 오면 텐트 안에 마주 앉아 오랫동안 묻어두었던 말들이 쏟아집니다. "그동안 미안했다." "사실은, 아빠의 사랑이 너무 필요했어요." 짧은 고백이 눈물을 부르고, 마음의 상처는 조용히 녹아내립니다.
+
+이사장으로서 학교를 운영하며 다양한 프로그램을 기획하고 폐기해왔습니다. 하지만 대디캠프는 단 한 번도 폐기 목록에 오른 적이 없습니다. 오히려 해가 갈수록 학교에서 없어서는 안 될 존재가 되었습니다. 그 이유는 간단합니다. 대디캠프는 학교가 만들어주는 것이 아니라 아버지들이 스스로 만들고 지켜온 것이기 때문입니다. 위에서 내려온 프로그램은 지시가 바뀌면 사라지지만, 아래에서 올라온 문화는 사람들의 마음속에 살아남습니다.
+
+드림대디클럽의 아버지들, 선배가 후배에게 건네는 한마디가 신앙의 전통을 다음 세대로 이어가게 합니다. 대디캠프는 결국 이렇게 말합니다. 아버지가 회복될 때 가정이 회복되고, 가정이 회복될 때 공동체가 살아난다고. 이 믿음 하나가 15년을 버텨온 힘이었습니다.</p>
+      <div class="story-author">꿈마당 박희덕 (DFM 1기 공동대표 · 제2대 이사장)</div>
+    </div>
+
+    <!-- 05 맑은 아버지 -->
+    <div class="story-card reveal">
+      <div class="story-num">05</div>
+      <div class="story-meta">맑은 아버지 · 빛나는 딸과 함께 · 사춘기 딸에게 용돈을 제안한 아빠</div>
+      <p class="story-text" style="white-space:pre-line">"아빠가 용돈 줄 테니까, 좋은 데 같이 갈래?" 마음을 졸이며 했던 제안에 뜻밖에도 "좋아!" 하고 선선히 수락하던 딸아이의 해맑은 얼굴이 아직도 선명합니다. 이 캠프가 어떤 내용인지 전혀 알지 못한 채, 바다에 풍덩 뛰어들 듯 참가를 결정했습니다. 사실 그 용돈 제안 뒤에는 사춘기 딸과 어떻게 가까워져야 할지 모르는 아버지의 막막함이 숨어 있었습니다.
+
+팀별 레크레이션에서는 사춘기 딸과 오랜만에 몸을 부대끼며 웃었습니다. 특강을 들으며 어릴 적 장면이 떠올랐습니다. 서울에서 사업하던 아버지는 일 년에 딱 두 번 명절에만 부산 집에 오셨습니다. 40대 후반 젊은 나이에 먼저 하늘나라로 가신 아버지. 아버지의 자리가 그리움이 되어버렸습니다. '내 딸에게는 그 그리움을 남기지 않겠다.' 다짐이 마음에 새겨지는 순간이었습니다.
+
+텐트를 치던 중 딸이 먼저 손을 내밀었습니다. 폴대를 잡아달라는 것이었지만, 저에게는 그 손이 그냥 손이 아니었습니다. 얼마 만에 함께 무언가를 만든 걸까요. 우리는 말 한마디 없이 땀을 흘리며 텐트를 완성했고, 완성된 텐트 앞에서 처음으로 눈이 마주쳤습니다. 그 눈빛 안에 딸의 말이 담겨 있었습니다. "아빠, 이런 거 할 줄 알아?" 놀람과 함께 작은 인정의 빛이 섞여 있었습니다.
+
+애찬식에서 무심코 던졌던 말과 행동들을 돌아보며 눈물이 흘렀습니다. 캠프를 마치고 집으로 돌아오는 길, 운전대를 잡고 옆 자리에서 잠든 아이를 바라보며 말 할 수 없는 충만함과 감동이 가슴에 차오르는 것을 느끼며 뜨거운 눈물이 흘렀습니다. 이 힘은 스텝들이 보내준 따뜻한 보살핌, 이 시대 아버지를 위해 신념을 가지고 캠프를 만들고 섬기는 분들의 마음이 그 공간을 가득 채웠기 때문이라고 생각합니다.
+
+집에 도착해 아이를 침대에 눕히고 방문을 닫는 순간, 저는 짧은 기도를 드렸습니다. "하나님, 감사합니다. 이 아이와 함께할 시간이 아직 남아 있어서." 용돈으로 시작한 하루가, 평생 마음속에 남을 하루가 되었습니다. 모든 사춘기 아버지들에게 말하고 싶습니다. 용돈을 줘도 좋고, 어떤 방식이든 좋으니 일단 같이 가세요. 텐트 안에서 하나님이 나머지를 하십니다.</p>
+      <div class="story-author">맑은 아버지</div>
+    </div>
+
+    <!-- 06 자랑스런부 김학일 -->
+    <div class="story-card dark reveal">
+      <div class="story-num">06</div>
+      <div class="story-meta">자랑스런부 김학일 · 6대 드림대디클럽 대표 · 꿈의학교 11년차 아버지</div>
+      <p class="story-text" style="white-space:pre-line">대디캠프를 얘기하려면 시 한 편부터 읊고 싶다. 정석주 시인의 '대추 한알'— "저게 저절로 붉어질 리는 없다 / 저 안에 태풍 몇 개 / 저 안에 천둥 몇 개 / 저 안에 벼락 몇 개." 대디캠프도 그렇다. 15년이 저절로 흐른 것이 아니다. 그 안에 아버지들의 눈물 몇 개, 포기하고 싶었던 순간 몇 개, 그리고 서로가 서로를 붙들었던 손길 몇 개가 있었다.
+
+1박2일 대디캠프 내내 아이와 살을 맞대고 꼬박 1년을 할 얘기를 나눴다. 이 감동을 오래 이어가고 싶어 회사에 휴가를 내고 '제1회 기독학부모대회'를 찾아갔더니, 그곳에서 대디캠프를 창설한 1기 공동대표님들을 만났다. 그 대회에서 박상진 교수님 말씀을 들었다. "자녀 교육에서도 예수님이 주님 되심을 인정하고 맡겨드리는 것이 두 번째 거듭남이다." 그 말씀이 내 인생을 바꿨다.
+
+교회 목장에서 기타 딩가딩가 치던 초보가, 대디캠프 100여 명 앞에서 덜컥 찬양인도를 맡게 되어 한 달을 물집 잡혀가며 연습했다. 그 떨림이 지금도 아찔하다. 처음 무대에 서던 날, 손이 떨려 코드를 잘못 짚었는데 아버지들이 그냥 따라 불러줬다. 그 너그러운 공동체의 품이 나를 찬양팀으로 만들었고, 결국 대표 자리까지 이끌었다.
+
+스텝으로 일하던 해들을 돌아보면, 내가 자녀를 위해 봉사했다는 생각보다 내가 더 많이 받았다는 생각이 압도적이다. 새벽 4시에 운동장에서 텐트 자리를 잡고, 전투식량 상자를 나르고, 행사 후 새벽까지 뒷정리를 하던 그 시간들이 나를 아버지로 빚어냈다. 땀 흘리며 함께 일한 형제들이 내 평생의 동역자가 되었다.
+
+이런 저런 스텝 경험을 쌓고 올해 대표를 맡게 되었으니 정말 촌놈이 출세했다. 꿈의학교의 '꿈'과 10년을 넘겨 현재 진행형인 '아빠'라는 단어가 여전히 마음을 설레게 한다. 처음부터 지금까지, 더군다나 앞으로가 '설레임'이라고 제법 거창하게 선언하는 바이다. 다음 대표에게, 그 다음 대표에게, 이 설레임이 끊기지 않고 전해지기를 바란다. 대추 한 알이 붉어지기까지 태풍이 필요했듯, 그 태풍 속에서도 우리가 함께라면 충분하다.</p>
+      <div class="story-author">자랑스런부 김학일 (6대 드림대디클럽 대표)</div>
+    </div>
+
+    <!-- 07 솔로몬모 선보영 -->
+    <div class="story-card reveal">
+      <div class="story-num">07</div>
+      <div class="story-meta">솔로몬(23졸)·다솜(25졸)·약속(고2) 어머니 선보영 · 중보기도팀 스텝</div>
+      <p class="story-text" style="white-space:pre-line">대디캠프는 오직 졸업생과 재학생 부모님만으로 섬겨지는 캠프입니다. 학교는 그저 공간을 대여하고 홍보만 도울 뿐, 모든 계획부터 진행까지 학부모님들의 헌신으로 이루어집니다. 아이가 이미 졸업했는데도 학교에 오시는 아버지들이 처음엔 신기했습니다. 어떤 매력에 저렇게 열심을 내는 걸까. 그 답을 찾는 데 그리 오래 걸리지 않았습니다.
+
+캠프 당일, 뽀글머리 가발에 알록달록 팬츠로 무장한 아버지들이 아이돌 못지않은 무대를 펼쳤습니다. 얼마나 연습을 많이 했는지 그 음악의 첫 구절만 나와도 춤이 시작될 정도였습니다. 아이들은 대폭소와 기대, 진지하고 무뚝뚝한 아버지들의 무장해제한 모습에 함박 웃음을 터뜨렸습니다.
+
+무대 뒤에서 어떤 일이 있었는지 아이들은 모릅니다. 그 아버지들은 새벽 기도를 마치고 퇴근 후 연습실에 모였습니다. 틀린 동작을 서로 고쳐주며 웃고, 음이 안 맞아도 다시 해보고, 때로는 진지하게 "이게 진짜 필요한가?" 묻기도 했습니다. 하지만 아이들 앞에 서는 순간 모든 망설임이 사라졌습니다. 아버지들의 그 바보 같은 용기가 자녀들에게 전해지는 첫 번째 선물이었습니다.
+
+저는 중보기도팀 스텝이어서 옆에서 자세히 살펴볼 수 있었습니다. 기도팀 리더께서 놀라운 이야기를 전해주셨습니다. 예수님을 믿지 않던 아버지였는데, 대디캠프에서 아이와의 관계가 회복되면서 예수 그리스도까지 만나게 되었다고. 코로나 때에도 감동은 멈추지 않았습니다. 각자 찍은 율동 영상을 모아 편집한 아버지들의 합편 영상은 가족 모두의 가슴을 울렸습니다. 이 사역은 하나님의 마음을 주시지 않으면 절대 할 수 없는 헌신입니다.
+
+세 아이를 꿈의학교에 보낸 어머니로서, 저는 대디캠프를 통해 남편이 달라지는 것을 목격했습니다. 캠프를 다녀온 날 저녁, 남편의 눈빛이 달랐습니다. 말이 많지 않은 분인데도 "여보, 오늘 정말 좋았어"라고 먼저 말했습니다. 아버지가 변하면 가정이 변합니다. 저는 그것을 우리 집 식탁에서 매번 확인했습니다. 중보기도팀으로 섬기는 이유가 바로 이것입니다. 텐트 안에서 일어나는 일들이 우리 집 거실에서도 계속되기를, 기도하고 또 기도합니다.</p>
+      <div class="story-author">솔로몬·다솜·약속 어머니 선보영</div>
+    </div>
+
+    <!-- 08 솔로몬부 정지영 — 세 아이와 세 번의 대디캠프 -->
+    <div class="story-card wide reveal">
+      <div class="story-num">08</div>
+      <div class="story-meta">솔로몬(23졸)·다솜(25졸)·약속(고2) 아버지 정지영 · 세 아이와 세 번의 대디캠프</div>
+      <p class="story-text" style="white-space:pre-line">가장 인상 깊었던 순간은 운동장에 텐트를 치고 첫째 아들 솔로몬과 단둘이 밤하늘을 올려다보던 그 밤이었습니다(2017년). 전투식량과 따뜻한 오뎅국으로 풍성했던 저녁식사, 망원경으로 별을 찾다가 밤하늘보다 차가운 운동장 바닥과 더 가까워진 하룻밤. 내성적이고 말수가 적었던 아들에게 사회성을 넓혀주고 싶어 시작한 캠프였지만, 돌아보면 아들을 변화시킨 것이 아니라 제가 먼저 아들의 마음속 세계로 초대받은 행복한 시간이었습니다.
+
+그날 밤 솔로몬이 작은 목소리로 물었습니다. "아빠, 어릴 때 할아버지랑 이런 거 해봤어?" 저는 대답하지 못했습니다. 그 침묵이 우리 둘 사이에 잠시 떠 있었고, 그 침묵 속에서 저는 아버지에게 못 받은 것을 이 아이에게는 주고 싶다는 마음이 올라왔습니다. 차가운 운동장 바닥 위에 나란히 누워 별을 보던 그 밤이, 제 아버지로서의 인생에서 가장 중요한 전환점 중 하나였습니다.
+
+둘째 다솜과의 1박 2일은 하나님의 선물 같은 회복의 시간이었습니다(2019년). 하루 종일 손을 잡고 교정을 거닐며 함께 웃고, 먹고, 기도하고, 서로를 축복하는 시간을 가졌습니다. 애찬식 시간에 나눴던 고백들— 딸아이 태어날 때 곁에 있어주지 못한 미안함을 시작으로 "미안하다, 사랑한다" 말했던 그 순간들은 지금도 코끝이 찡해 옵니다.
+
+다솜은 그 캠프 이후 제게 달라졌습니다. 이전에는 저를 바라볼 때 약간의 거리감이 느껴졌는데, 그 이후로 먼저 안겨오는 일이 생겼습니다. 아버지가 용서를 구하는 모습을 딸이 보았을 때, 아버지는 높은 존재에서 함께 걸어가는 존재가 됩니다. 그 변화가 관계를 바꿉니다.
+
+셋째 약속과의 캠프(2021년)는 코로나로 인해 각 가정에서 진행했습니다. 아빠와 함께하는 것을 어색해 하는 아들과 1박 2일 여행을 가서 숙소에서 얼굴에 페인팅을 하고 사진을 찍었습니다. 단 둘만 있다 보니, 아이가 저에 대해 어려운 마음이 있다는 것이 느껴졌습니다. 대디캠프 이후 한참 지나 선교여행을 다녀온 약속이 저에게 많이 울며 마음을 나눠주었을 때, 그 씨앗이 그때 이미 심겨졌음을 알았습니다.
+
+세 아이, 세 번의 캠프. 그리고 세 번 모두 제가 변했습니다. 아이들을 위해 간 곳에서 저 자신을 만났습니다. 꿈의학교 대디캠프는 자녀에게 아버지를 선물하는 프로그램이 아닙니다. 아버지에게 자신을 되돌아볼 거울을 건네주는 시간입니다.</p>
+      <div class="story-author">솔로몬·다솜·약속 아버지 정지영</div>
+    </div>
+
+    <!-- 09 복있는부 정영진 -->
+    <div class="story-card dark reveal">
+      <div class="story-num">09</div>
+      <div class="story-meta">복있는(고2) 아버지 정영진 · 2021년 코로나 대디캠프 · 불편한 진실과 마주하다</div>
+      <p class="story-text" style="white-space:pre-line">2021년 코로나 상황 속에서의 대디캠프는 각 가정에서 진행했습니다. 다른 가족들과 떨어져서 단 둘만의 특별한 시간을 갖는 것은 처음 있는 일이었습니다. 여행지에서 얼굴에 페인팅을 하고, 식사를 하고 같이 잠을 자는— 과제가 아니었더라면 아들과 그런 시간을 보내지 못했을 것입니다. 그리고 그 과제를 내주어 고맙습니다.
+
+사실 그 시간은 저에게 복있는과의 관계적 어려움을 직면해야 하는 시간이었습니다. 복있는은 둘째 아들로서, 큰아들과 막내 딸과 함께 집에 있었기 때문에 저와의 관계에 대해 그리 진지하게 생각해 보지 못했습니다. 그런데 단 둘만 있다 보니, 아이가 저에 대해 어려운 마음, 불편한 마음이 있다는 것이 느껴졌고, 그 사실을 직면하면서 마음도 아프고 죄책감도 들었습니다.
+
+둘째라는 자리는 묘합니다. 위에 형이 있고 아래에 막내가 있으면, 둘째는 종종 '괜찮은 아이'로 자동으로 처리됩니다. 제가 그 함정에 빠져 있었습니다. 복있는이 힘들다고 말한 적이 없었기 때문에, 저는 그 아이가 힘들지 않다고 생각했습니다. 그런데 둘만의 공간에서, 그 말 없음이 사실은 말을 꺼내지 못하는 것이었음을 처음 알았습니다.
+
+대디캠프는 편안한 일상으로는 절대 열리지 않았을 대화의 문을 열어주었습니다. 대디캠프 이후 한참 지나서 복있는이 학교에서 가는 터키 선교여행을 다녀왔는데, 선교여행 직후 아들이 저에게 많이 울며 마음을 나눠주었습니다. 그 회복의 씨앗이 대디캠프에서 심겨졌다는 것을 이제는 압니다.
+
+아들의 눈물을 받아내던 그날, 저는 아버지로서 제 자신이 얼마나 준비가 안 되어 있었는지를 깨달았습니다. 동시에, 그 준비 안 된 아버지 앞에서 마음을 열어준 아들에게 감사했습니다. 대디캠프가 없었다면 그 씨앗이 심겨지지 않았을 것이고, 씨앗이 없었다면 그 눈물도 없었을 것입니다. 불편한 진실과 마주하게 해준 그 하룻밤이, 우리 부자 관계의 새로운 출발점이었습니다.</p>
+      <div class="story-author">복있는 아버지 정영진</div>
+    </div>
+
+    <!-- 10 예배자 대디 김정래 — 애찬식 진행 스텝 -->
+    <div class="story-card dark reveal">
+      <div class="story-num">10</div>
+      <div class="story-meta">예배자 대디 김정래 · 애찬식 진행 스텝 · 세 자녀(예배자·브라이드·느헤미야)의 아버지</div>
+      <p class="story-text" style="white-space:pre-line">저는 첫째 예배자(2016년 졸), 둘째 브라이드(2017년 졸), 셋째 느헤미야와 함께 이 캠프를 걸어온 아버지입니다. 2010년 창설 첫 해부터 찬양 인도와 애찬식 진행 스텝으로 섬겨왔으니, 대디캠프와 함께 늙었다고 해도 과언이 아닙니다.
+
+<span class="vc-highlight">스텝을 지속한 이유는 단 하나, 행복한 일이었기 때문입니다. 아빠들이 본연의 모습으로 돌아가고, 청소년 자녀들이 어린 시절처럼 아빠와 뛰노는 장면을 볼 때마다 뿌듯함이 차올랐습니다. '청소년과 아빠가 이렇게 함께 노는 게 가능하구나.' 매번 그 생각을 했습니다.</span>
+
+애찬식은 밤 9시, 드림콘서트가 끝나고 모든 스텝이 먼저 그 자리에 모여 찬양하고 기도하는 것으로 시작됩니다. 그 기도 가운데 참가자 아빠와 자녀들이 입장하지요. 저는 매번 이 기도를 드렸습니다. "하나님, 아빠들에게 하나님 아버지의 마음을 부어주소서. 수고하고 무거운 짐을 내려놓게 하소서. 서로에게 표현하는 용기와 언어를 주시고, 막힌 관계를 푸는 회복의 시간이 되게 하소서."
+
+1박2일이라는 그리 길지 않은 시간 안에서, 아픔도 오해도 서먹서먹함도 오글거림도—모든 것이 녹아지는 장면을 매번 보았습니다. 가장 기억에 남는 장면이 있습니다. 고등학생 자녀를 안고, 자녀의 품에 안겨 홀로 외롭게 견뎌온 삶의 애환을 내려놓고 흐느껴 우는 아버지. 그 아버지를 있는 그대로 품어주며 토닥이던 꿈쟁이. 또 하나는, 예수님을 믿지 않아 아내와도 자녀와도 관계가 깨어진 아버지가 애찬식에서 처음으로 "미안하다"는 말을 꺼내던 순간. 그날 그 가정의 회복이 거기서 시작되었습니다.
+
+대디캠프의 본질은 이것입니다. 아빠는 하나님 노릇 하는 위치를 내려놓고, 영원하신 하나님 아버지의 자녀 자리에 서서, 오직 십자가의 사랑으로 자녀를 섬기고 축복하는 것. 꿈쟁이는 아빠를 통해 흘러오는 하나님의 사랑을 배우고 기억하는 것. 애찬식은 그 고백이 눈물과 떡과 포도주로 완성되는 자리입니다.
+
+"그리스도 예수 안에서 함께 지어져 가느니라"(에베소서 2:22). 이 말씀이 15년 섬김의 요약입니다. 대디캠프가 앞으로도 이어지는 한, 이 자리에서 아빠와 자녀가 함께 하나님 앞에 서는 애찬식은 계속되어야 합니다.</p>
+      <div class="story-author">예배자 대디 김정래 (애찬식 진행 스텝)</div>
+    </div>
+
+    <!-- 11 동행하는 강건 졸업생 -->
+    <div class="story-card wide reveal">
+      <div class="story-num">11</div>
+      <div class="story-meta">동행하는 강건 · 꿈의학교 졸업생 · 한동대 재학 · 국회 교육위원회 인턴 비서관</div>
+      <p class="story-text" style="white-space:pre-line">한동대학교 입학 면접에서 '지속 가능한 사회'가 무엇인지 질문받았을 때, 저는 망설임 없이 '사라지지 않는 사회'라고 대답했습니다. 꿈의학교 7년간 온몸으로 체득했던 것— 그것은 사람과 사람 사이의 단단한 유대 그 자체였습니다. 그 유대가 어디서 시작되었는지를 돌아보면, 운동장 텐트 안에서 아버지와 나눴던 밤이 거기 있습니다.
+
+국회 교육위원회에서 일하며 사교육과 부모가 얼마나 뗄 수 없는지 절감했습니다. 기숙사에 자녀를 보낸 채 '내가 헌신적이지 못한 부모는 아닐까' 하는 죄책감을 느끼셨을 아버지들에게, 대디캠프는 가뭄의 단비 같은 기회였을 것입니다. 제도 교육의 틀 안에서는 부모의 역할이 학원비와 성적 관리로 축소되기 쉽습니다. 그러나 대디캠프에서 아버지의 역할은 단순합니다. 함께 있어주는 것, 그 하나입니다.
+
+그런데 대디캠프의 진짜 힘은 예상치 못한 곳에서 발휘되었습니다. 바로 아버지들 사이에서였습니다. 아버지라는 이름의 무게, 가장의 외로움, 자녀 양육에 대한 막막함— 사회에서는 좀처럼 꺼내놓기 힘든 이야기들이 꿈의학교 학부모라는 울타리 안에서 허물없이 터져 나왔습니다. "나만 그런 게 아이었구나." 이 공감이 그들을 동지로 만들었고, 그 동지애가 학교를 지탱하는 든든한 기둥이 되었습니다.
+
+졸업생으로서 저는 그 기둥 위에서 자랐습니다. 아버지들이 만들어놓은 신뢰의 문화 속에서, 저도 신뢰받는 사람으로 자라났습니다. 아버지가 학교를 믿으니 저도 학교를 믿었고, 아버지가 친구 아버지와 형제처럼 지내니 저도 친구들을 형제처럼 여겼습니다. 공동체는 위에서 설계되는 것이 아니라 아래에서 쌓이는 것임을, 저는 꿈의학교에서 배웠습니다.
+
+눈에 보이는 시스템은 모방할 수 있어도, 그 안에 흐르는 보이지 않는 디테일까지 따라 하기는 어렵습니다. 전국의 수많은 대안학교들이 꿈의학교의 시스템을 배워갔지만 오래 살아남지 못했다는 소식을 들었습니다. 그 보이지 않는 디테일의 정점에 대디캠프가 있습니다.
+
+자녀를 위해 찾아온 그곳에서, 역설적으로 아버지들 자신이 더 큰 위로와 치유를 경험했습니다. 그 역설이 15년을 이어왔고, 그 15년이 저 같은 졸업생들의 뿌리가 되었습니다. 저는 대디캠프를 경험한 세대입니다. 그리고 언젠가 제 자녀도 이 땅 어딘가에서 아버지와 텐트를 치는 밤을 보내게 되기를 바랍니다.</p>
+      <div class="story-author">동행하는 강건 (꿈쟁이 졸업생)</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUTREACH -->
+<section id="outreach" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">Beyond Dream School · 2015–2025</span>
+    <h2 class="section-title reveal">꿈교를 넘어 세상으로</h2>
+    <p class="section-lead reveal">
+      대디캠프는 꿈의학교 울타리 안에 머물지 않았다. 일본 동경, 김포의 한 교회, 충주의 깊은 산속까지—
+      씨앗은 바람을 타고 퍼져나갔다.
+    </p>
+
+    <div class="outreach-grid reveal">
+
+      <!-- 1. 일본 동경 요한학교 -->
+      <div class="outreach-card outreach-dark">
+        <div class="outreach-badge">🗾 2015–2016</div>
+        <h3 class="outreach-title">동경 요한학교<br>대디캠프 &amp; 독서캠프</h3>
+        <div class="outreach-tag">일본 아웃리치 · 대디캠프 1회</div>
+        <div class="outreach-body">
+          <p>2007년부터 꿈의학교 교사로 섬기다 박사 과정을 위해 떠난 이재은 선생님은 2013년부터 동경 YICS(요한국제기독학교)에서 코디네이터로 일하고 있었다. 학교를 세웠던 교회 공동체가 비극적 사건으로 무너진 후, 교감도 교장도 없는 상황에서 8개 학년 51명의 아이들과 23명의 다국적 교사 체계를 혼자 세워야 했다. 통역이 필수인 다국적 교사 회의, 100여 명의 학부모 소통— 모든 일이 몇 배의 시간을 잡아먹는 나날이었다.</p>
+          <blockquote class="outreach-quote">"꽃이 바람에 심하게 흔들리지 않게 튼튼한 가지가 되어 주고 싶었습니다. 꽃이 마음껏 피려면 뿌리가 건강해야 하지요. 땅부터 파야겠습니다. 같이 해 주세요."</blockquote>
+          <p>2015년 4월 어느 토요일 아침, 기도하다 이재은 선생님은 빙그레 아버지에게 전화했다. 담임 교사 시절 보았던 학부모의 섬김을 기억했기 때문이었다. 그 간절한 청에 응답하여 <strong>그해 7월</strong> 학부모 에듀 포럼과 비전 코칭 워크샵이 열렸다. <strong>10월 23~24일</strong>에는 마침내 10명의 어벤져스 팀이 동경으로 날아가 첫 번째 해외 대디캠프를 열었다. 처음으로 오렌지색 티셔츠를 입고 아빠와 찍은 사진을 지금도 소중히 간직하는 아이들이 있다.</p>
+          <p>이듬해 <strong>2016년 4월</strong>에는 10명의 드림팀이 다시 건너가 <strong>꿈의학교 독서캠프</strong>를 열었고, 같은 해 5월에는 YICS 남학생 6명이 꿈의학교 국토순례에 초대받아 한국 땅을 처음 밟으며 꿈교 학생들과 함께 걸었다. 대디캠프 한 번으로 끝난 것이 아니라 독서캠프로 이어지며, 꿈교 DNA가 동경 땅에 뿌리를 내리는 두 번째 계절이 되었다.</p>
+          <span class="outreach-cite">— 이재은 선생님, 일본 대디캠프를 기록하며</span>
+        </div>
+      </div>
+
+      <!-- 2. 꿈꾸는교회 -->
+      <div class="outreach-card outreach-forest">
+        <div class="outreach-badge">⛪ 2017–2025</div>
+        <h3 class="outreach-title">김포 꿈꾸는교회<br>아빠와 함께하는 전원캠프</h3>
+        <div class="outreach-tag">교회 정착형 · 9년의 여정</div>
+        <div class="outreach-body">
+          <p>1기 공동대표 중 한 분인 승리한 대디 양진석은 더 큰 꿈을 품었다. "이런 좋은 프로그램이 꿈교에만 머물러 있을 수 없다"는 확신으로, 2013년 등록한 김포 꿈꾸는교회(前 전원교회) 가정사역위원회 총무로서 담당 장로님·당회와 예산을 조율하고 꿈교 스태프들과 일정을 맞추는 데 꼬박 3년을 준비했다.</p>
+        </div>
+        <div class="outreach-timeline">
+          <div class="otl-item">
+            <span class="otl-year">2017 · 제1회</span>
+            <p class="otl-text">교회 마당에 텐트를 치고 전투식량으로 저녁을 먹었다. 꿈교 스태프 13명이 달려와 지원. 13가정 26명으로 시작했지만, 아이들은 "동생이나 친구들도 꼭 해야 하는 프로그램"이라고 말했다.</p>
+          </div>
+          <div class="otl-item">
+            <span class="otl-year">2018 · 제2회</span>
+            <p class="otl-text">교회 자체 역량 키우기. 강화도에서 ATB 자전거·활쏘기·갯벌 체험까지 더해 꿈교 DNA에 교회만의 색깔을 입히기 시작했다.</p>
+          </div>
+          <div class="otl-item">
+            <span class="otl-year">2019 · 제3회</span>
+            <p class="otl-text">드림대디클럽 지원을 최소화하며 자립을 향한 첫 발. 아이들의 해맑은 웃음이 계속해야 할 이유를 스스로 증명했다.</p>
+          </div>
+          <div class="otl-item otl-pause">
+            <span class="otl-year">2020–2022 · 팬데믹 공백</span>
+            <p class="otl-text">코로나19로 3년 연속 개최 불가. "올 한 해만 더 하면 완전히 정착될 것 같은데"라는 아쉬움이 컸다.</p>
+          </div>
+          <div class="otl-item">
+            <span class="otl-year">2023 · 제4회</span>
+            <p class="otl-text">대디쉐프·가현산 산책·버킷리스트 10가지 작성으로 재기동. 어느 가정은 "스페인 리그 축구 관람"을 그해 여름 실현했다.</p>
+          </div>
+          <div class="otl-item">
+            <span class="otl-year">2024 · 제5회</span>
+            <p class="otl-text">교회 청년부가 레크리에이션 전담. 아빠와 자녀가 함께 단기·장기 버킷리스트를 의논해 작성했다.</p>
+          </div>
+          <div class="otl-item otl-highlight">
+            <span class="otl-year">2025 · 제6회 — 완전 자립</span>
+            <p class="otl-text"><strong>드림패밀리멤버스 도움 없이</strong> 교회 자체 기획·진행. 역사상 처음 조기 마감. 과거 참가자 가족이 스태프로 돌아오는 선순환이 시작되었다.</p>
+          </div>
+        </div>
+        <blockquote class="outreach-quote" style="margin-top:18px">"네 시작은 미약하였으나 네 나중은 심히 창대하리라."<br>처음 다섯 가정으로 시작한 꿈교 대디캠프가 이제는 세상으로 나아가게 하셨습니다.</blockquote>
+        <span class="outreach-cite">— 승리한 대디 양진석, 1기 공동대표</span>
+      </div>
+
+      <!-- 3. 깊은산속 옹달샘 -->
+      <div class="outreach-card outreach-warm">
+        <div class="outreach-badge">🌲 2024–2025</div>
+        <h3 class="outreach-title">충주 깊은산속 옹달샘<br>유스캠프 위드 대디</h3>
+        <div class="outreach-tag">사회적 확산</div>
+        <div class="outreach-body">
+          <p>2023년 꿈교 대디캠프에 딸 빛나는과 함께 참가한 특별한 손님이 있었다. 충북 충주 깊은산속 옹달샘의 백기환 매니저였다. 꿈교 학생이 아닌데도 빙그레 아버지와의 인연으로 캠프에 몸소 참여한 것이다. 그 경험이 씨앗이 되었다.</p>
+          <p><strong>2024년 여름</strong>, 깊은산속 옹달샘에서 '유스캠프 위드 대디(Youth Camp With Daddy)'가 탄생했다. 두란노 아버지학교·드림대디클럽·서초구 아버지센터 세 기관이 협력했으며, 10년 이상의 현장 경험이 한 자리에 모였다.</p>
+          <p>프로그램의 핵심은 단 하나, <strong>놀기</strong>였다. 아빠와 자녀가 한 팀이 되어 '이심전심' 게임을 했다— 막상 답을 쓰려니 서로 모르는 게 너무 많았다. 담임 선생님 이름, 아빠가 가장 좋아하는 음식, 아빠의 어릴 적 꿈. 그렇게 아빠와 자녀는 서로를 다시 알아갔다.</p>
+          <p>아빠 얼굴에 그림 그리기, 하토마이 테라피, 별자리 찾기, 그리고 세족례. 아빠가 자녀의 발을 씻겨 주는 시간, 누가 먼저랄 것도 없이 눈물이 어렸다. 꿈교의 DNA가 학교 담장을 넘어 치유의 공간에서도 살아 숨 쉬었다. 2025년에도 이어지고 있다.</p>
+          <blockquote class="outreach-quote">"아버지가 흔들리면 집안이 흔들립니다. 사회적 아버지의 역할을 하는 사람들이 많을 때 건강한 사회가 될 수 있습니다."</blockquote>
+          <span class="outreach-cite">— 고도원 (깊은산속 옹달샘 대표)</span>
+        </div>
+      </div>
+
+    </div><!-- end outreach-grid -->
+
+    <!-- 외부 참가자 증언: 백승화(백기환) 대디 -->
+    <div class="outreach-witness reveal">
+      <div class="outreach-witness-label">
+        <span class="eyebrow">외부 참가자의 목소리</span>
+        <h3>담장 밖에서<br>온 아버지</h3>
+        <p>꿈의학교 학생의 부모가 아니어도, 빙그레 아버님과의 인연 하나로 캠프 문을 두드리는 아버지들이 있었습니다.</p>
+      </div>
+      <div class="outreach-witness-body">
+        <blockquote class="ow-scripture">
+          '사람이 마음으로 자기의 길을 계획할지라도<br>
+          그 걸음을 인도하는 자는 여호와시니라' (잠 16:9)
+        </blockquote>
+        <p class="ow-big-quote">꿈의 학교 화장실 벽에 붙어 있던 이 성경구절이 이번 캠프를 이끈 손길을 느끼게 합니다. 꿈교 학생이 아니면서도 인도하는 손길로 빙그레 아버님과의 인연으로 이어져 캠프에 참여할 수 있게 되었습니다. 마치고 나니 <em>'말로 감사함을 표현할 수 없는 감사함'</em>을 몇 마디 말로 어찌 전할까 싶습니다.</p>
+        <p class="ow-p">대디캠프에는 좋은 뜻, 아름다운 꿈을 가진 아버지들이 참 많았습니다. 자신의 아픔으로부터 주저앉지 않고, 주어진 고난의 뜻을 하나님께 묻고, 진실하고 성실하게 간구하는 삶으로 자신을 새로 일으켜세운 멋있는 아버지들이었습니다. 62여 명 아빠와 그 아들딸이 참여했고, 드러나고 또한 보이지 않는 손길이 70명. 빈틈없는 짜임새와 재미와 기발함, 모든 가족을 깊이 배려하는 디테일에서 진지한 고민의 흔적을 느낄 수 있었습니다.</p>
+        <p class="ow-p">딸 '빛나는'도 아빠와 단 둘이 보내는 캠프가 조금은 어색하고 불편했을 것입니다. 그러나 좋은 시간이 되었다고 긍정적으로 인정하는 마음에 고마움을 느낍니다. 좀 더 시간이 지나 돌이켜보면 이 시간을 아름답게 기억할 것이라 믿습니다. 혹여 인생의 어두운 터널을 지날 때, 아빠에게 들었던 사랑의 고백이 빛과 힘이 되어줄 것이라 믿습니다.</p>
+        <span class="outreach-witness-cite">— 백기환(백승화 대디), 2023 꿈의학교 대디캠프 외부 참가자</span>
+      </div>
+    </div>
+
+    <!-- 확산 마무리 메시지 -->
+    <div class="pull-quote reveal" style="margin-top:80px">
+      <blockquote>"꿈교를 넘어서 세상으로 나아가는 꿈을 가지게 하시고, 동경 요한학교로, 꿈꾸는교회의 대디캠프까지 나아가게 하셔서 많은 분들이 참여하여 자녀와 아빠와의 회복이 있게 하신 위대한 하나님의 크신 계획을 경험하게 되었습니다."</blockquote>
+      <cite>— 승리한 대디 양진석, 1기 공동대표</cite>
+    </div>
+
+  </div>
+</section>
+
+<!-- VOICES -->
+<section id="voices" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">People's Voices · 2010–2025</span>
+    <h2 class="section-title reveal">손잡고 걷던 그날들</h2>
+    <p class="section-lead reveal">
+      아빠와 꿈쟁이가 함께 보낸 1박 2일 — 15년의 시간 속에 새겨진 아버지들의 진심 어린 목소리들.<br>
+      캠프가 끝난 뒤 한참이 지나서야 쓴 글도 있고, 그 자리에서 떨리는 손으로 적은 글도 있습니다. 어떤 글이든, 모두 진짜였습니다.
+    </p>
+
+    <!-- ══ 2010 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2010</div>
+        <div>
+          <p class="stories-year-label">제 1회 대디캠프 · 천안 국립청소년수련원 · 5월 21~22일</p>
+          <p class="stories-year-title">아빠가 살아야 꿈쟁이가 산다</p>
+        </div>
+        <span class="stories-year-count">5편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">빙그레 대디 김봉하</span>
+            <span class="vc-role">1기 공동대표 · 꿈교 홈페이지 게시글</span>
+          </div>
+          <p class="vc-text">156명의 아빠와 꿈쟁이들이 함께, 오랜만의 연휴에 평균 5시간씩 교통 체증을 뚫고 모였습니다. 만약 자녀가 아니라 아내가 기다렸다면 아마 절반은 돌아들 가셨을 거라고 농담들 하셨습니다.
+<span class="vc-highlight">딸 빙그레가 아빠에게 쓴 편지의 한 줄이 지금도 마음에 남습니다. "꿈교에서 전화하면 항상 기다렸다는 듯이 밝게 받아줘서 고마워요."</span>
+하나님께서는 우리의 기대를 저버리지 않으시고, 아빠와 꿈쟁이들의 관계와 사랑의 회복으로 응답하셨습니다. 드림 대디 캠프 2기, 3기…는 계속 될 것입니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">예배자 대디 김정래</span>
+            <span class="vc-role">중1 예배자 아빠 · 꿈교 홈페이지 댓글</span>
+          </div>
+          <p class="vc-text">이번 아빠캠프를 통해 가슴을 맞대고 한참을 아들을 안았을 때, 아들의 심장박동을 듣고 느꼈습니다. 이 세상 그 무엇보다 저의 가슴을 뜨겁고도 설레이게 하는 그 소리를 제 가슴에 안고 왔습니다.
+<span class="vc-highlight">아들이 엄마에게 말했답니다. "엄마, 함께 손잡고 기도하려고 눈을 감았다 눈을 뜨면 아빠가 없어요." 캔들파이어 시간에 아들이 단상에 올라와 저에게로 걸어올 때, 모든 것의 위로와 감동이 저를 감싸주었습니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">은빛 아빠 채민수</span>
+            <span class="vc-role">꿈교 홈페이지 댓글</span>
+          </div>
+          <p class="vc-text">캠프 끝난 지 며칠이 지났지만 아직도 그때의 느낌이 생생합니다. 아이를 꼭 껴안았을 때 훌쩍 커버린 딸을 발견하고는 놀랐고, 건강하고 바르게 커줘서 너무너무 고마웠습니다.
+<span class="vc-highlight">앞으로 꿈교에서 열심히 탐구하고 뜨겁게 사랑하고 세상을 품을 수 있기를 축복했습니다. 내년에도 꼭 함께 하고 싶습니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">오뚝이 아빠 김병기</span>
+            <span class="vc-role">중3 오뚝이 아빠 · 꿈교 홈페이지 댓글</span>
+          </div>
+          <p class="vc-text">아들과 함께 가슴으로 안고 고백하는 중에, 내 소중한 아들임을 절실히 알았습니다. 등으로 기대고 일어서는 '순간' — 아빠는 아들의 삶을 책임지는 짐의 생각에서 벗어나, <span class="vc-highlight">부자지간 서로의 꿈을 위한 없어서는 안 될 상생의 협력자 관계</span>로 알았기에 작은 아들이 이젠 다정한 친구로, 형아로, 선생님으로 보여 잘해야겠다는 다짐을 하게 돼서 기뻤습니다.</p>
+        </div>
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">송지순 선생님</span>
+            <span class="vc-role">꿈의학교 교사 · 꿈교 홈페이지 댓글</span>
+          </div>
+          <p class="vc-text">대디캠프에 다녀온 학생들에게 캠프 어땠냐고 살짝 물어보면 하나같이 너무 좋았다고 합니다. 무엇이 그리 좋았냐 하니, <span class="vc-highlight">아빠를 처음으로 안아보았다는 아이부터, 아빠와 재밌게 놀아서라는 등 답은 가지각색이지만 우리 아이들이 행복해하는 모습은 똑같습니다.</span> 저희 교사들도 덩달아 행복해집니다. 이미 아이를 졸업시켜버린 것이 아쉽기도 하고요.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ 2011 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2011</div>
+        <div>
+          <p class="stories-year-label">제 2회 대디캠프</p>
+          <p class="stories-year-title">첫 마음의 기록들</p>
+        </div>
+        <span class="stories-year-count">2편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">익명의 아버지</span>
+            <span class="vc-role">2011년 참가 / 꿈교 게시판 댓글</span>
+          </div>
+          <p class="vc-text">작년 캠프에 참여한 후 너무나 유익하고 감동적인 시간이었기에 올해 일정이 언제 공지되나 기다렸습니다. 딸과 함께했던 1박 2일은 평생 감동으로 가슴속에 영원히 기억될 것 같습니다.
+<span class="vc-highlight">"우리 꿈쟁이들을 위한 아빠와 함께하는 시간이니만큼, 우리 꿈쟁이 아빠들이 발 벗고 나서서 한마음 한뜻으로 응원하고 기도하며 참석했으면 좋겠습니다!"</span>
+날짜가 토·일이든 일·월이든 상관없이, 우리 아이들을 위한 귀한 시간이라면 언제라도 달려가겠습니다. 드림대디캠프를 준비하시는 아버님들, 사랑하고 축복합니다!</p>
+        </div>
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">사무엘 선생님</span>
+            <span class="vc-role">꿈의학교 교사 · 2011년 2월 부임 · 2025년 원고 기고</span>
+          </div>
+          <p class="vc-text">2011년 2월, 신입생 학부모 캠프 당일 처음 받아든 꿈의학교 교육계획서를 읽으면서, 저는 '이곳이야말로 내가 진정 있어야 할 곳'이라는 확신을 얻었습니다. 알지 못하는 고향을 찾아 평생을 헤매다가 마침내 고향에 도착한 듯한 느낌이었습니다.
+<span class="vc-highlight">꿈의학교는 '함께 세워가는 가정, 함께 세워가는 학교'라는 슬로건을 가지고 있습니다. 대디캠프는 그 철학을 가장 구체적으로 실현하는 교육과정입니다. 학부모가 교육의 객체가 아닌 주체로 참여하여 직접 기획하고 운영함으로써, 학교 교육의 패러다임을 근본적으로 변화시켰습니다.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2012 — 2013</div>
+
+    <!-- ══ 2012 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2012</div>
+        <div>
+          <p class="stories-year-label">제 3회 대디캠프 · 강원도 횡성 숲체원</p>
+          <p class="stories-year-title">아들의 손이 내 손아귀에 다 들어오지 않던 날</p>
+        </div>
+        <span class="stories-year-count">3편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">가지 대디 김인배</span>
+            <span class="vc-role">꿈교 자유게시판 후기 · 1탄</span>
+          </div>
+          <p class="vc-text">새벽기도를 마치고 횡성을 향해 출발했다. 사랑하는 아들을 기다리는 설레는 마음은 꼭 어린아이가 소풍 가듯 신났다. 드디어 도착. 울 아들이 제일 먼저 나왔다.
+<span class="vc-highlight">"너무 반가운 마음에 손을 흔들고, 아들도 아빠를 보면서 흔들고, 이렇게 우리의 사랑 여행은 시작되었다."</span>
+아들의 품이 넓어져서 내 품 안에 들어오지 않았지만, 손만큼은 따뜻하고 좋았다. 사실 진행위원들이 '어떤 상황에도 아들 손을 놓지 말라'고 했는데, 이미 청년이 된 아들이 손을 잡지 않으려 하면 어쩌나 걱정했었다. 다행히 주의사항 중 하나여서 마음껏 손을 잡고 다녔다. 그동안 바쁘다는 핑계, 피곤하다는 핑계로 제대로 잡아주지 못했는데, 이번에 날을 잡았다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">가지 대디 김인배</span>
+            <span class="vc-role">꿈교 자유게시판 후기 · 2탄</span>
+          </div>
+          <p class="vc-text">둘째 날 라인댄스 시간, 워낙 몸치인지라 자꾸만 옆 사람과 마주하게 됐다. 그래도 아이들과 손을 잡고 추는 댄스여서 왠지 잘 하고 싶었다. 용감하게 아들 손을 잡아 끌었다. 무조건 표는 내 거라는 마음으로. 아들도 슬그머니 따라나서는 것을 보며 '이 아이는 내 피를 그대로 이어받았구나' 하고 안심했다.
+<span class="vc-highlight">점심을 먹고 어제 숙제했던 내용으로 아들과 대화하는 시간이 있었다. 아빠가 고마웠던 것, 미안했던 것을 이야기하고 아들에게 물었다. "없다, 감사하다"는 말을 들었을 때, 나쁜 아빠는 아니었구나 하는 안도의 한숨과 기쁨이 동시에 밀려왔다.</span>
+그리고 끝에는 우리의 맘들의 섬김이 있었다. 끊임없이 공급하는 간식들, 힘이 들어 앉아있다가도 간식 타임이 되면 수퍼우먼이 되시는 맘들의 헌신은 영원히 기억될 것이다.</p>
+        </div>
+        <div class="vc-card vc-poem">
+          <div class="vc-author">
+            <span class="vc-name">작가 지소영</span>
+            <span class="vc-role">2013년 대디캠프 참관 후 기고</span>
+          </div>
+          <p class="vc-text" style="font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:2.2;color:var(--forest);">"아빠가 이렇게 많이 웃는 걸
+처음 봤어요.
+아빠, 그동안 불평하고
+괜히 짜증냈던 것 죄송해요."
+
+"아빠, 아빠가 나의 아빠여서 감사해요.
+나보다 사랑한다는 말
+많이 해주셔서 감사해요.
+아빠, 사랑해요."</p>
+          <p style="font-size:12px;letter-spacing:0.08em;color:var(--ink-faint);margin-top:20px;">— 오월 초, 꿈의학교 대디캠프 때 자녀들이 아빠에게 고백한 편지의 일부</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2013</div>
+
+    <!-- ══ 2013 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2013</div>
+        <div>
+          <p class="stories-year-label">제 4회 대디캠프 · 강원도 횡성 숲체원</p>
+          <p class="stories-year-title">"아빠, 사랑해요" — 오랫만에 들은 그 말</p>
+        </div>
+        <span class="stories-year-count">1편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">하모니 대디</span>
+            <span class="vc-role">중1 하모니 아버지</span>
+          </div>
+          <p class="vc-text">언제부터인지 아빠와 대화가 줄어들고 마음을 쉽게 열지 않던 하모니. 그런 하모니를 볼 때면 남들 눈에는 마음 좋은 아빠로 보였을 수도 있겠지만, 실은 하모니에게 많은 상처를 주었다는 후회가 저를 힘들게 했습니다. 그렇기에 내심 대디캠프를 기다려왔습니다. 서먹해진 관계를 꼭 회복하고 싶었습니다.
+<span class="vc-highlight">숲길을 걸을 때도, 밥을 먹을 때도, 노래를 하면서도, 신나는 음악에 춤을 출 때도, 명랑운동회를 할 때도 저는 하모니의 아빠로 늘 곁에 있었습니다. 하모니는 서서히 마음을 열었고, 우리는 눈물로 서로에게 미안한 감정을 표현했고 따뜻한 포옹으로 용서의 대답을 대신했습니다.</span>
+하모니로부터 정말 오랫만에 들었습니다 — "아빠, 사랑해요." 그리고 저도 진심으로 답했습니다. "아빠가 미안해." 런닝맨 코스에서 단번에 아빠의 손을 찾아낸 하모니에게 받은 감동, 평생 잊지 못할 것입니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2014 — 2015 · 교사의 눈으로</div>
+
+    <!-- ══ 2014–2015 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num" style="font-size:36px;line-height:1.1;">2014<br>—<br>2015</div>
+        <div>
+          <p class="stories-year-label">제 5~6회 대디캠프 · 꿈의학교 캠퍼스 &amp; 일본 현지</p>
+          <p class="stories-year-title">교사의 눈으로 바라본 대디캠프</p>
+        </div>
+        <span class="stories-year-count">3편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">soundchoy</span>
+            <span class="vc-role">꿈의학교 홍보 담당 교사 · 2025년 원고 기고</span>
+          </div>
+          <p class="vc-text">2014년 동하가 중등과정에 입학했다. 중1이 된 동하는 대디캠프를 엄청 기다렸다고 했다. 아빠와 1박 2일 보내는 선배들의 모습이 마냥 부러워 보였던 것 같다. 텐트 안에서 전투식량을 먹고, 미션을 했다. 동하의 즐거웠던 순간들을 나는 생생히 기억한다. 아빠 등에 올라타서 짓는 진심의 표정, 아빠 얼굴에 낙서하기, 아빠 머리 위에 물풍선 터뜨리기—
+<span class="vc-highlight">"그렇게 즐거워하던 것을 본 적이 없다. 내가 아들에게 뭔가 잘못한 것이 있었나 생각이 들 정도로 즐겁게 아빠를 괴롭혔다. 물론 그런 모습이 싫지 않았지만."</span>
+2015년, 일본 현지에서 대디캠프가 열렸다. 월급 받는 것도 아닌데 아버님들은 그저 한 가정이라도 좋은 변화가 있기를 바라는 마음으로 밤 늦게까지 회의하고 또 회의하셨다. 그 열정이 내게는 엄청난 감동이었다.
+
+지금 내 책상에는 2014년에 아들과 찍었던 사진, 그리고 그때 '아빠와 꿈쟁이의 평생 약속'이 적혀진 액자가 있다. 아들이 대학원에 다니고 있는 지금도 액자 속 말씀을 볼 때마다 그때 주신 마음으로 대디캠프의 아름다운 기억을 떠올린다.</p>
+        </div>
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">동행하는 강건</span>
+            <span class="vc-role">꿈의학교 졸업생 · 한동대학교 재학 · 2025년 원고 기고</span>
+          </div>
+          <p class="vc-text">한동대 입학 면접에서 '지속 가능한 사회'가 무엇인지 질문받았을 때, 저는 망설임 없이 '사라지지 않는 사회'라고 대답했습니다. 제게 '지속 가능성'이란, 꿈의학교에서 7년간 온몸으로 체득했던 사람과 사람 사이의 단단한 유대 그 자체였습니다.
+<span class="vc-highlight">전국의 수많은 대안학교들이 꿈의학교의 노하우를 배워갔지만, 눈에 보이는 시스템은 모방할 수 있어도 그 안에 흐르는 '보이지 않는 디테일'까지 따라 하기는 어려웠을 것입니다. 그 보이지 않는 디테일의 정점에, 어쩌면 가장 꿈의학교다운 행사인 '대디캠프'가 있습니다.</span>
+아버지들은 처음에는 오직 자녀와의 관계 회복이라는 목표만 보고 참여했지만, 어느새 서로에게서 자신의 모습을 발견하기 시작했습니다. 사회에서는 좀처럼 꺼내놓기 힘든 이야기들이 '꿈의학교 학부모'라는 울타리 안에서 허물없이 터져 나왔고, 그들은 서로의 연약함을 나누며 '동지'가 되었습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">사무엘 선생님</span>
+            <span class="vc-role">꿈의학교 교사 · 세 자녀와 대디캠프 참가 · 2025년 원고 기고</span>
+          </div>
+          <p class="vc-text">처음에는 "몇 년 하다 그만두겠지"라는 희망 아닌 희망을 품고 있었습니다. 하지만 저의 소망과는 다르게 대디캠프는 멈출 줄을 몰랐습니다. 아니, 오히려 점점 더 많은 학부모와 학생들이 참여하게 되었습니다.
+<span class="vc-highlight">어느 날, 대디캠프 마지막 소감 발표 자리에서 한 꿈쟁이가 '용서할 수 없는 아버지'에 대한 내용을 발표했습니다. 참을 수 없는 분노와 서운함이 고스란히 터져 나왔고, 행사장은 순식간에 숙연해졌습니다. 그 후 아들의 글을 듣고 있던 아버지가 아들에게 용서를 구했습니다.</span>
+그 순간, 저는 대디캠프에 대한 생각이 완전히 바뀌었습니다. 단순히 학부모님들의 열심이 아니라, '함께 세워가는 가정, 함께 세워가는 학교'를 이루어가는 가장 중요한 교육과정이라는 것을 깨달았습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2019 · 용광로처럼 뜨거웠던 해</div>
+
+    <!-- ══ 2019 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2019</div>
+        <div>
+          <p class="stories-year-label">제 9회 대디캠프 · 꿈의학교 캠퍼스</p>
+          <p class="stories-year-title">용광로처럼 뜨거웠던 2019</p>
+        </div>
+        <span class="stories-year-count">8편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">DJ1 소피아 부 윤경록</span>
+          </div>
+          <p class="vc-text">처음엔 꿈쟁이와 손잡고 다녀야 한다는 항목에서 긴장했는데, 막상 다니니 어색하면서도 좋았습니다.
+<span class="vc-highlight">알고는 있었지만 자녀를 비롯한 가정에, 좀 더 구체적으로는 아이와 아내에게 더 집중해야겠다는 마음을 다잡을 수 있도록 전환점이 되었습니다.</span>
+이 글을 쓰며 다시 한번 다짐합니다. 하나님께서 만들어 주신 가정에 더욱 충실하겠습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">DJ1 푸른꿈 · DJ3 비상하는 대디 김충회</span>
+          </div>
+          <p class="vc-text">용광로 같이 뜨거웠던 2019년 대디캠프가 며칠 지났지만 그 감동과 은혜는 오래도록 갈 것 같습니다.
+<span class="vc-highlight">아들 푸른꿈과의 대화와 포옹, 눈 맞춤이 앞으로 겪게 될 갈등을 이겨내고 이해하는 힘이 될 거라 믿습니다. 역시 어느 분 표현대로 감사캠프였고 감동캠프였습니다. 저 역시도 순간순간 울컥해서 눈물 삼키느라 힘들었습니다.</span>
+스텝 분들의 기도와 헌신, 열정이 저희와 꿈쟁이들 마음을 녹여주셨습니다. 곳곳에서 보이지 않던 수고들이 생각납니다 — 누군가는 물풍선에 물을 담고, 쓰러진 페트병을 다시 세우고, 간식을 나누고. 이 많은 걸 언제부터 준비하셨는지, 셀 수가 없네요.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">DJ1 축복하는 대디 김천호</span>
+          </div>
+          <p class="vc-text">꿈교로 운전하면서 축복하는과 어떤 대화를 나눌까 고민했는데, 처음 미션이 이동 시 손을 꼭 잡고 다녀야 한다는 데서 조금씩 부자간의 벽이 허물어졌습니다.
+<span class="vc-highlight">더욱 감동이었던 것은 애찬식에서 자녀를 무한 축복해주라고 하셔서 서로 안고 기도하는데 왠지 모를 뜨거운 눈물이… 그날의 애찬식은 영원히 가슴에 남을 것 같네요.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 · 안나 · 17졸 조이 대디 정상호</span>
+          </div>
+          <p class="vc-text">5년 전 원주에서도 여러 스탭 분들의 수고와 헌신으로 아들과 멋진 추억을 만들 수 있었습니다. 잊고 지내다가 이번에는 딸과의 대디캠프를 하면서 감사한 마음을 또 가지게 되었습니다.
+<span class="vc-highlight">누군가의 사랑으로 자녀와의 교감이 더욱 깊어지고 가정이 올바로 설 수 있다는 것이, 아직도 우리 사회는 건전하고 밝은 미래가 있다는 확신을 줍니다.</span>
+받기만 하는 자리가 아니라 헌신할 수 있는 사람이 되도록 하겠습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">가온 아빠 허윤석</span>
+          </div>
+          <p class="vc-text">모든 주제마다 감동이었고, 특히 특강과 애찬식이 너무 감동이었고, 1박 2일 동안 가슴이 짠한 캠프였습니다.
+<span class="vc-highlight">내년에 둘째도 입학할 예정인데, 꼭 함께 참석할 겁니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 구하는 대디 노형곤</span>
+          </div>
+          <p class="vc-text">1박 2일 짧은 캠프였지만, 이렇게 긴 시간 동안 아들과 둘만 있어본 적은 없었습니다. 처음에는 조금 어색하기도 했지만, 서로를 더 이해하고 더 많은 것을 알게 된 소중한 시간이었습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">DJ2 긍휼한 대디 이태일</span>
+          </div>
+          <p class="vc-text">긍휼한과 단 둘이 이렇게 많은 이야기와 사진을 찍은 적이 언제였는지 모르겠네요. 대디캠프를 마칠 때는 아빠를 대하는 긍휼한의 모습이 훨씬 더 가까워진 걸 느낄 수 있었습니다. 모든 스탭 분들, 너무 감사드립니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 물맷돌 아빠 박병석</span>
+          </div>
+          <p class="vc-text">삼십 년 전 이후 처음 먹은 전투식량, 색다른 경험이었습니다. 스텝 맘들 감사합니다. 요리하는님의 새벽 준비에 감동받았고, 스텝들의 재능—찬양, 레크, 미션 리더, 테이블 리더, 의료진—에 대단한 대디들이구나 감동받았습니다.
+<span class="vc-highlight">섬겨주셔서 감사합니다. 아버지학교처럼 4주 하고 싶을 정도입니다.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2021 — 2022 · 줌 캠프</div>
+
+    <!-- ══ 2021 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2021</div>
+        <div>
+          <p class="stories-year-label">제 10회 드림 대디 줌 캠프 <span class="vc-zoom-badge">ZOOM</span></p>
+          <p class="stories-year-title">달콤하고 시원한 수박 같은 시간</p>
+        </div>
+        <span class="stories-year-count">1편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고2 빛내는 · 고2 다니엘 · DJ1 특별한 대디 고영현</span>
+          </div>
+          <p class="vc-text">처음에 줌으로 하는 대디캠프가 낯설고 부담스러웠다. 하지만 꿈교 학부형에게 최고의 추억은 드림 대디캠프라고 들었기에 경험하고 싶어 은근히 기대하며 참여하였다. 나는 "2021년 드림 대디 줌캠프는 수박이다"라고 정의해 보았다.
+<span class="vc-highlight">그동안 딸과의 관계가, 친숙하고 다정한 엄마와 달리 '옆집 아저씨 같은 냄새'를 풍기며 꼰대질만 전문으로 하는 아버지가 아니었을까. 그런데 이번 캠프를 통해 부녀 간 사랑이 수박의 달콤함처럼 서로를 회복시켰고, 서로에게 막혀있었던 것이 수박의 시원함처럼 확! 사라졌다.</span>
+특히 세족식, 갓난아이 때 이후 한 번도 진지하게 딸아이의 발을 만져보지 못했는데. 무릎을 꿇고 씻겨주는 그 순간, 아버지됨의 의미를 한층 깊이 깨달았다. 앞으로 2022년에 다니엘과, 2023년에 특별한과 함께 대디캠프 할 것을 생각하니 벌써부터 기쁨과 감동의 물결이 밀려온다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ 2022 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2022</div>
+        <div>
+          <p class="stories-year-label">제 11회 드림 대디 줌 캠프 <span class="vc-zoom-badge">ZOOM</span></p>
+          <p class="stories-year-title">"대디캠프는 ___이다" — 참가자들의 한 문장</p>
+        </div>
+        <span class="stories-year-count">14편</span>
+      </div>
+      <div class="vc-oneliner-grid reveal">
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>본드</em>이다"</strong>
+          아빠와 아들을 딱 붙여주기 때문이다.
+          <p class="vc-ol-who">DJ3 프리넬로 부 김동완</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>기회의 시간</em>이다"</strong>
+          꿈쟁이와 다시는 가질 수 없는 뜻깊은 시간을 보냈기 때문이다.
+          <p class="vc-ol-who">DJ1 마르투스 부 강원종</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>기회의 시간, 회복의 시간</em>이다"</strong>
+          7년간 아빠와 아들의 마음을 아프게 한 가시를 뽑았기 때문이다.
+          <p class="vc-ol-who">고3 다니엘 대디 고영현</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>진실의 거울</em>이다"</strong>
+          아빠의 잘못된 모습을 깨닫게 해주기 때문이다.
+          <p class="vc-ol-who">고1 달란트 부 함수찬</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>9회말 투아웃</em>이다"</strong>
+          곧 아빠와 아들의 놀라운 역전 인생 드라마가 펼쳐질 것이기 때문이다.
+          <p class="vc-ol-who">고1 보아스 부 김영빈</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>따뜻한 집밥</em>이다"</strong>
+          항상 풍성한 은혜와 감사로 영과 육을 가득 채워주기 때문이다.
+          <p class="vc-ol-who">김석희 (산돌 김도윤 부)</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>OT</em>이다"</strong>
+          꿈교 아빠 되기 필수 입문 코스로 딱이기 때문이다.
+          <p class="vc-ol-who">DJ1 헤븐 부 황보대혁</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>맛집</em>이다"</strong>
+          모든 순간이 우리 배부르게 하시는 하나님의 요리 같았기 때문이다.
+          <p class="vc-ol-who">DJ1 봄 부 강우중</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>운동</em>이다"</strong>
+          하기 전에 귀찮았는데 하고 나니 꿈쟁이와 관계가 튼튼해졌고 뿌듯했기 때문이다.
+          <p class="vc-ol-who">품어주는 · 하엘 아빠 김요섭</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>나무</em>이다"</strong>
+          꿈쟁이와 지나온 시간을 나무 아래 잠시 멈추어 서서 되돌아보고, 앞으로 갈 길을 준비하게 해주기 때문이다.
+          <p class="vc-ol-who">고1 열정적인 부 현석남</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>영화 '주 안에 아빠와 딸' 촬영 중</em>이다"</strong>
+          사춘기 꿈쟁이와 아빠가 서로를 위해 기도해주고 사랑하려 노력하였기 때문이다. 앞으로 쭉 촬영 중이길……
+          <p class="vc-ol-who">DJ2 보화 부 · 고2 기억하는 부 정민도</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>아쉬움과 희망</em>이다"</strong>
+          너무나 행복했던 시간이 끝나 아쉽지만, 닫혀 있던 딸과의 관계가 회복되고 사랑의 희망을 만들어주었기 때문이다.
+          <p class="vc-ol-who">DJ1 은 부 정용재</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>기대와 설렘</em>이다"</strong>
+          6년간 일어날 기대와 설렘으로 가득해졌기 때문이다.
+          <p class="vc-ol-who">DJ1 꽃피우리 부 양두영</p>
+        </div>
+        <div class="vc-oneliner">
+          <strong>"대디캠프는 <em>조각칼</em>이다"</strong>
+          소중한 아들과의 행복한 추억을 마음 속 깊이 새겼기 때문이다.
+          <p class="vc-ol-who">DJ1 위로하는 부 봉상일</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2023 · 비가 내리던 날</div>
+
+    <!-- ══ 2023 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2023</div>
+        <div>
+          <p class="stories-year-label">제 13회 대디캠프 · 꿈의학교 캠퍼스</p>
+          <p class="stories-year-title">비가 내리던 날, 더 깊이 스며들다</p>
+        </div>
+        <span class="stories-year-count">8편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">(헬퍼) DJ2 생명나무 · 23졸 자랑스런 대디 김학일</span>
+          </div>
+          <p class="vc-text">그곳에서 아버지의 눈물을 보았습니다. 자녀를 잘 양육하기 위해 돈 많이 벌게 해달라는 잘못된 기도를 했었다며 눈이 벌개지도록 한참을 울었던 아버지, 기도제목을 어떻게 올리는지를 몰랐던 신앙 없으신 아버지의 나눔을 기쁨으로 쳐다보는 사랑스러운 중1 딸—
+<span class="vc-highlight">아버지의 자리는 늘 세상으로 향해 있어서 자녀와 속 깊은 얘기에 목말라 있었고, 어떻게 대화를 해야 할지도 모르겠을 안타까움이 있었으나, 서로 부둥켜 안고 미안함과 감사를 나누고, 눈물로 기도해주는 감동의 스토리를 하나님은 연출하고 계셨습니다.</span>
+구약의 맨 마지막 구절이 '아버지의 마음을 자녀에게로, 자녀들의 마음을 아버지에게로 돌이키게 하리라'라고 한 이유가 이것이었나봅니다. 몸은 피곤했으나 마음에 충만한 기쁨과 뿌듯함—물 떠온 하인만이 알 수 있는 천국잔치의 비밀을 알게 하신 주님 감사합니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 손길 대디 김기원</span>
+          </div>
+          <p class="vc-text">13년 동안 기다린 대디캠프였습니다. 궂은 날씨가 예보되었지만 전혀 걱정되지 않았습니다. 섬겨주시는 부모님들을 믿고 기대했기 때문입니다.
+<span class="vc-highlight">보통 기대가 크면 실망하기 마련인데, 기대를 넘어선 기쁨과 감사가 있어서 참 신기합니다. 레크레이션 시간에도, 강의 시간에도 딸의 마음에 따랐습니다. 아이러니하게도 우리의 최선을 내려놓았을 때 오히려 자녀가 만족하고 나와 함께하는 시간을 누리는 것 같습니다.</span>
+자녀와 이런 시간을 또, 혹은 스탭으로 맞이하겠습니다.</p>
+        </div>
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">백승화 대디 백기환</span>
+            <span class="vc-role">꿈교 학생이 아닌 자녀와 함께 참가</span>
+          </div>
+          <p class="vc-text">꿈교 학생이 아니면서도 빙그레 아버님과의 인연으로 캠프에 참여할 수 있게 되었습니다. 대디캠프에는 좋은 뜻, 아름다운 꿈을 가진 아버지들이 참 많았습니다. 자기를 앞세우는 세상의 모습과는 달리, 삶에 깊이 베어있는 낮은 자세는 깊은 울림을 주었습니다.
+<span class="vc-highlight">딸이 커갈수록 단 둘이 있는 시간의 어색함을 극복하는 것은 작은 도전이었습니다. 그러나 다녀와서는, 앞으로 딸과 둘만의 시간을 종종 가져야겠다는 결심이 생깁니다. 혹여 인생의 어두운 터널을 지날 때, 아빠에게 들었던 사랑의 고백이 빛과 힘이 되어줄 것이라 믿습니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">DJ3 특별한 대디 고영현</span>
+          </div>
+          <p class="vc-text">개인적으로 이런 일 저런 일로 참가를 고민하다 DJ3 특별한과 함께 막차에 간신히 올라탔다. 우천으로 장소변경과 프로그램 변경들이 많았음에도 불구하고 모든 순서들이 순조롭게 진행되어 참가하는 대디님들이 편안하게 꿈쟁이에게 집중할 수 있어 감사했다.
+<span class="vc-highlight">그래서 2023년 대디캠프를 한마디로 말한다면 "비(Rain)"라고 말하고 싶다. 온 대지에 촉촉히 내린 비는 다소 불편함이 있지만, 사실 비는 생명체들이 호흡하며 살아갈 수 있도록 허락하시는 하나님의 은혜다. 수많은 헌신의 손길들, 기도와 물질로 섬기신 귀한 마음들을 생각하면 나의 마음에 감동과 은혜가 비처럼 촉촉히 내린 2023년 대디캠프라 말할 수 있다.</span></p>
+        </div>
+        <!-- 2023 설문 한 문장 -->
+        <div class="vc-oneliner-grid reveal" style="margin-top:2px;">
+          <div class="vc-oneliner"><strong>"시간여행"</strong>아이를 가졌을 때부터 지금까지의 추억들이 새록새록 생각나서<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"부채탕감"</strong>주기로 한 사랑을 못 준 것, 일부라도 나눈 것 같아서<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"촉촉한 비"</strong>비가 땅을 적시듯 하나님의 은혜가 마음에 적셔졌기 때문에<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"학교"</strong>딸을 가르치려고 보낸 학교인데 아빠가 배워오게 되었기에<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"소원성취"</strong>13년을 기대했고 너무나 만족하고 감사하기 때문에<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"하프타임"</strong>이전과 다른 새로운 시작이기 때문에<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"좋은 숙제이자 잘한 숙제"</strong>의무로 참여했다가 많은 깨달음을 얻었기에<p class="vc-ol-who">참가자</p></div>
+          <div class="vc-oneliner"><strong>"따따블의 은혜"</strong>스텝으로 준비하며 돕는 은혜, 참가자로 섬김받는 은혜<p class="vc-ol-who">참가자</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2024 · 아빠가 바뀌니, 아이도 바뀌었습니다</div>
+
+    <!-- ══ 2024 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2024</div>
+        <div>
+          <p class="stories-year-label">제 14회 대디캠프 · 꿈의학교 캠퍼스</p>
+          <p class="stories-year-title">아빠가 바뀌니, 아이도 바뀌었습니다</p>
+        </div>
+        <span class="stories-year-count">12편</span>
+      </div>
+      <div class="voices-stack">
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중2 옳은 빛 대디 강건우</span>
+          </div>
+          <p class="vc-text">하반기면 캐나다 2차를 출발하는 옳은 빛에게 좋은 추억을 만들어 줘야겠다는 생각으로 참여를 결정했지만, 왠지 모를 부담감에 캠프 당일 하고 싶지 않다는 생각을 했습니다. 농담 반 진담 반으로 "우리 도망갈까?"라고 말하기도 했습니다.
+<span class="vc-highlight">특강 시간 과제를 작성하면서 아들에게 미안했던 일들을 적으려는 순간, 옳은 빛의 어린 시절들이 머리 속을 스쳐 지나가면서 마음이 울컥했습니다. 아빠가 바뀌니, 옳은 빛도 바뀌었습니다. 점점 더 적극적으로 행동하였고, 적극적으로 하다 보니 순간순간이 즐겁고 행복했습니다!</span>
+대디캠프 덕분에, 제가 처음 생각했었던 좋은 추억을 만드는 것을 넘어, 평생 동안 아들과 추억할 수 있는 소중한 시간을 만들 수 있었습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 이로운 · 중1 창대한 부 김대원</span>
+          </div>
+          <p class="vc-text">"우리 아이가 달라졌어요. 대디캠프 이후 우리는 베스트 프렌드가 되었어요"라는 MSG 듬뿍 들어간 후기를 보고 싶으시겠지만, 현실은 그렇지 않았습니다. 손 한 번 잡으려면 사정해야 하며, 주변에 누구라도 있으면 어깨로 밀치는 딸과 1박 2일을 보냈습니다.
+<span class="vc-highlight">극적인 변화는 없었지만, 아빠와 딸의 관계 책장에 인덱스를 추가한 기분입니다. 같은 시간을 보내고, 같은 냄새를 맡고, 같은 체험을 했다는 것이 큰 자산으로 남을 것 같습니다.</span></p>
+        </div>
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">(스텝) 중3 승리 대디 고재진</span>
+          </div>
+          <p class="vc-text">저의 아버지는 1급 장애자이십니다. 전혀 듣지도, 말씀하지도 못하시는 아버지를 어렸을 땐 많이 원망했었죠. 나는 아버지가 되면 자녀들과 정말 잘 놀아줄 거라 결심했었습니다. 그런데 제가 받아본 경험이 없기에 자녀와 대화를 오랫동안 잘하지 못했습니다.
+<span class="vc-highlight">아들과 둘이서만 손을 잡고 다니는 것도, 오랫동안 도손도손 이야기하는 것도, 둘이서 이야기하면서 자는 것도 너무나 신기하고 감사한 시간들이었습니다. 일상에서도 얼마든지 둘이서만 보낼 수 있다는 자신감과 각오를 하게 된 것도 큰 소득입니다.</span>
+스텝 부모님들의 헌신과 수고, 졸업하신 분들부터 학교를 얼마나 사랑하시기에 이렇게 헌신하시나. 꿈의 학교에 힘이 여기에 있지 않나 생각이 들었습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">하라 부</span>
+            <span class="vc-role">23졸 드보라 · 고3 위대한 · 중1 하라 아버지</span>
+          </div>
+          <p class="vc-text">아내가 8년 전 큰아이를 꿈교에 보내자고 했을 때 반대했던 때가 기억납니다. 하지만 지금은 제가 더 사랑하는 꿈교가 되었습니다. 그 계기가 바로 첫아이와 했던 대디캠프였습니다.
+<span class="vc-highlight">처음 느껴보는 따뜻함, 평안함이 나의 삶의 이정표를 바꾸게 하였습니다. 나의 역할은 경제적인 것만 해결하면 된다는 생각이 많아서 오로지 일에만 몰입하고 있었는데, 대디캠프는 삶을 다른 각도로 해석하게 하는 계기가 되었습니다.</span>
+캠프의 매력에 이끌려 지금까지 스텝으로 자원하며 섬기게 되었습니다. 인격적으로 훌륭하신 아버님들과 함께하는 귀한 공동체가 있다는 건 저에게 축복입니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 소망 대디 김태형</span>
+          </div>
+          <p class="vc-text">입학 후 캠퍼스에서 마주치는 반짝반짝 빛나는 꿈쟁이들을 보며, 신입학부모교육을 거치며 훌륭한 선생님들에게 숙연해지기까지 했습니다. 대디캠프를 통해서 이제는 성품이 훌륭하신 많은 대디 분들에게 시선이 갔습니다.
+<span class="vc-highlight">둘째 날 미션을 수행하며 "세월이 많이 흘러서 아빠가 할아버지가 되고 너가 아빠가 되어도 지금 이 추억은 기억이 나겠지?" 하여 같이 웃던 순간에는 감격스럽기까지 했습니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중2 이르아 대디 이상현</span>
+            <span class="vc-role">꿈의학교 교사</span>
+          </div>
+          <p class="vc-text">교사 신분이기에 왠지 어색하고 민망할 것 같았지만, 참여하면서 든 생각은 정말 잘 한 결정이었다는 것입니다. 딸과 1박 2일, 정말 밀도 있는 시간과 추억을 만들 수 있었고, 교사가 아닌 아버지로서 많은 부분을 배울 수 있었습니다.
+<span class="vc-highlight">"함께 세워가는 가정, 함께 세워가는 학교"의 가치를 실현해 가는 졸업생, 재학생 학부모님들을 뵐 때 꿈의학교의 소망을 다시 한번 발견하게 됩니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 그길 부 대디 사무엘</span>
+            <span class="vc-role">꿈의학교 교사</span>
+          </div>
+          <p class="vc-text">제일 반가운 것은 졸업생 학부모님들이었습니다. '참 대단하시다'라는 생각을 매번 하게 됩니다. 마지막 날 아들과 점심을 먹으며 아빠와 엄마가 살아온 길에 대해서 이야기를 나눴습니다. 부모의 부족함, 우리가 가지고 있는 상처를 함께 공유하며, 부족한 부모의 모습을 통해 상처 받은 아들에게 미안함을 전했습니다.
+<span class="vc-highlight">그 시간이 참 좋았습니다. 누군가 저에게 '앞으로 꿈의학교가 잘 될 것 같냐'라고 묻는다면, 그때 제가 '잘 될 거에요'라고 말할 때 가장 큰 이유가 바로 '대디캠프'입니다.</span></p>
+        </div>
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 루민 부</span>
+          </div>
+          <p class="vc-text">루민이가 커가면서 아빠와 단둘이 보내는 시간이 점점 줄어들었습니다. 단둘이 차를 타고 대디캠프를 참석하기 위해 가는데, 이렇게 단둘이 장시간을 보냈던 적이 언제였나 생각해보게 되었습니다.
+<span class="vc-highlight">손잡고 서로 바라보고 안아주고 사랑한다고 서로 고백하고 기도해주고 평생의 약속도 작성하고. 무엇보다 루민의 진솔한 고백을 듣게 되었네요 — 아들이 아빠에게 가장 원했던 것이 함께 진솔한 대화와 친밀함이었다는 것을.</span>
+아들과의 데이트, 대디캠프라는 프로그램으로 시작되었지만 이제는 일상의 모습 속에 이러한 시간을 갖기로 했습니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중3 임마누엘 부</span>
+          </div>
+          <p class="vc-text">나는 아들에게 존경받고 인정받는 아빠가 되어야겠다는 생각이 들었습니다.
+<span class="vc-highlight">그동안 세상 사람들에게 인정을 받으려고 노력해서 어느 정도 인정을 받고 성공했다고 느꼈지만 — 과연 우리 아들에게는 인정받으려고 얼마나 노력했는가. 강의에서 나온 것처럼, 아들이 "저는 아빠가 되고 싶어요"라고 말하는 것을 듣고 싶습니다. 그것이 저에게 가장 행복하고 진정한 성공이라고 생각하게 됩니다.</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 전도하는 대디 이정수</span>
+          </div>
+          <p class="vc-text">꿈교에 아이를 보내면서 저의 마음속 한편에서 신앙의 회복이 되어가고 있었는데, 대디캠프를 참여하면서 많은 은혜를 받았습니다.
+<span class="vc-highlight">아이와 가까워진 것이 덤이 되어버렸네요 ^^;</span></p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 엘림 부</span>
+          </div>
+          <p class="vc-text">우리 엘림이가 태어난 이후 한 번도 둘만의 시간을 가져본 적이 없었는데, 이런 뜻깊고 추억 많은 시간을 마련해 준 꿈의학교에 진심으로 감사합니다.
+<span class="vc-highlight">애찬식을 하며 엘림이를 위해 하나님께 온전히 기도하고, 엘림이 또한 아빠인 저를 위해 기도해 줌으로써 서로 부녀가 영적으로 하나가 되는 귀한 시간이 되었습니다.</span>
+만일 이 캠프에 참가하지 않았더라면 얼마나 후회했을까. 대디캠프를 아직 졸업하지 않은 아버님이 있다면 충심을 다해 꼭 참가하라고 권유하겠습니다.</p>
+        </div>
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">내가 경험한 꿈의학교 대디캠프</span>
+            <span class="vc-role">교사 soundchoy · 2025년 기고</span>
+          </div>
+          <p class="vc-text">지금 내 책상에는 2014년에 아들과 찍었던 사진, 그리고 그때 '아빠와 꿈쟁이의 평생 약속'이 적혀진 액자가 있다. 가훈이나 비전을 문서로 만든 적이 없이 지냈는데 그때 처음 고민하고 기도하며 정했던 것 같다.
+<span class="vc-highlight">월급 받는 것도 아닌데 아버님들은 그저 한 가정이라도 좋은 변화가 있기를 바라는 마음으로 열정을 다해 일하고 일하셨다. 이후로도 꿈의학교 대디캠프는 계속되었고 지금도 계속 진행형이다. 더 많은 가정이 회복되고 각 가정의 회복을 통해 성령께서 일하시는 역사가 곳곳에서 일어나기를 기대해 본다.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section-divider">2025 · 15주년 대디캠프</div>
+
+    <!-- ══ 2025 ══ -->
+    <div class="stories-year-block reveal">
+      <div class="stories-year-header">
+        <div class="stories-year-num">2025</div>
+        <div>
+          <p class="stories-year-label">제 15회 대디캠프 · 꿈의학교 캠퍼스 · 15주년</p>
+          <p class="stories-year-title">15년의 전통이 살아있다는 것이 기적입니다</p>
+        </div>
+        <span class="stories-year-count">11편</span>
+      </div>
+      <div class="voices-stack">
+
+        <!-- 스텝 1 -->
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 라미 어머니</span>
+            <span class="vc-role">2025 간식팀 스텝 · 첫 섬김</span>
+          </div>
+          <p class="vc-text">완전 쌩초보라서 부담감이 엄청났습니다. 간식팀 모두 처음 섬기는 분들이라서 우리 모두 멘붕, 맨땅에 헤딩… "지금 눈에서 땀이 나는데 이거 눈물 아니죠??" 라며.
+<span class="vc-highlight">그와중에 동생들과 참여하신 아버지들, 스텝으로 함께한 고1 꿈쟁이들도 오다가다 서로 눈 인사로, 감사의 말로 에너지를 불어 넣어주셨습니다. 불편하기도 하고 아쉬운 부분들도 많았을 텐데 모든 상황을 감사로 받아들이고 서로 귀하게 여기며 축복하는 분들을 바라볼 때 하나님께서 우리와 함께하심을 고백하게 됩니다.</span></p>
+        </div>
+
+        <!-- 스텝 2 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중3 루나 · 중2 미소짓는 어머니</span>
+            <span class="vc-role">2025 스텝</span>
+          </div>
+          <p class="vc-text">매번 다른 부모님들의 도움을 받다가 꿈교 행사를 도우러 온 것이 이번이 처음이어서 빚을 갚는 마음이었고, 개인적으로 더 뜻깊은 시간이었습니다.
+<span class="vc-highlight">시간적으로나 육체적으로나 에너지가 참 많이 드는 행사임에도 불구하고 참석하시는 아버님들, 진행하시는 아버님들이 그렇게 많은 것도 저는 기적이라고 생각합니다. 작은 순종의 마음이 모여 큰 기적을 경험하게 하신 하나님을 찬양합니다.</span></p>
+        </div>
+
+        <!-- 심는 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">심는 아버지</span>
+          </div>
+          <p class="vc-text">정확한 시간대별로 착착 진행된 부분에 감탄을 했습니다. 첫 번째 복씨와 했을 때는 미션과 일정 소화하는 시간이 순식간에 지나갔는데, 이번에는 여유 있는 시간에 아이를 안아주고 많은 대화를 나눌 수 있는 시간이 넉넉했습니다.
+<span class="vc-highlight">정말 많은 분들의 섬김과 헌신으로 이 시간도 지나온 것 같습니다. 이 자리를 빌어 대단히 감사드립니다.</span></p>
+        </div>
+
+        <!-- 필요한 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중3 필요한 아버지</span>
+          </div>
+          <p class="vc-text">이렇게 딱 붙어서 핸드폰 없이 이틀을 보낸 건 처음이었던 것 같습니다. 근 1년 동안 학교 안팎으로 많은 일들을 겪어서 의기소침해 보이기도 했는데, 캠프를 통해 적지 않은 대화를 하게 되었습니다. 아직 어리니까 충분히 배울 수 있고, 그것을 바탕으로 더 행복하게 지내길 기도했습니다.
+<span class="vc-highlight">그.러.나. 필요한님은 아빠에게 내려꽂는 물풍선으로 희열과 행복을 많이 느꼈던 것 같아요. 전 쫄딱 젖어서 오늘까지 몸이 으실으실했습니다. ^^</span></p>
+        </div>
+
+        <!-- 총명한 부 -->
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 총명한 아버지</span>
+          </div>
+          <p class="vc-text">대디캠프에 참석하기 전까지 나름 아빠 역할을 잘하고 있다고 자부하고 있었습니다. 그런데 이번 캠프 기간 동안 아들과 함께 이야기를 나누면서, 단순히 같은 시간과 공간에 함께 있었다고 해서 아빠로서의 책임을 다한 것이 아니라는 것을 깊이 깨달았습니다.
+<span class="vc-highlight">아이가 어떤 고민을 품고 있는지, 어떤 두려움을 안고 있는지, 무엇을 잘하고 어떤 일에 자부심을 느끼는지조차 제대로 알지 못한 채 살아왔더군요. 좀 놀라기도 했고, 부끄러웠습니다.</span>
+이번 캠프를 통해 좀 더 끈끈한 사이가 될 수 있었고, 이제부터 조금씩 서로를 더 알아가기로 약속했습니다. 자식이라서가 아니라 하나의 온전한 인격체로, 세상을 향해 꿈꾸는 '꿈쟁이'로 존중하고, 사랑받을 가치가 충분한 존재임을 깨닫게 되었습니다.</p>
+        </div>
+
+        <!-- 경외하는 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">경외하는 아버지</span>
+          </div>
+          <p class="vc-text">나름대로 아빠 역할을 했다고 생각했지만 부족한 부분들을 돌아보았고, 딸아이와 단둘이서 1박 2일을 보낸 것 자체로 너무 감사했습니다.
+<span class="vc-highlight">딸아이의 존재 자체에 감사했고 하나님께서 자녀를 허락하신 목적과 청지기의 삶에 대해 되돌아보았습니다. 있는 그대로 자녀를 사랑하는 마음을 부어 주셨습니다.</span>
+기회가 주어진다면 내년에는 섬김의 위치에서 은혜를 누리고 싶습니다.</p>
+        </div>
+
+        <!-- 샬롬 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 샬롬 아버지</span>
+          </div>
+          <p class="vc-text">이런저런 바쁘다는 핑계로 초등학교 때까지는 샬롬과 이야기를 해본 시간이 거의 없어서, 가끔씩 보이는 행동만으로 아이를 판단하고 있었던 것 같습니다.
+<span class="vc-highlight">1박 2일 동안 레크레이션, 예배, 식사, 애찬식, 존재찾기, 캠핑 등 둘만의 시간을 보내면서 샬롬이 가지고 있는 아빠에 대한 생각들을 알 수 있게 되어 감사했고, 저에게 있어서도 성급한 판단이나 결정을 내리기보다 기다릴 줄 아는 모습을 가지는 것이 필요하다는 것을 알게 되었습니다.</span>
+눈에 띄지 않는 모든 영역에서 활동하신 선배 아버님과 어머님 모든 분들이 참여하며 만들어가는 축제였기에 기쁨과 감사가 넘쳤습니다.</p>
+        </div>
+
+        <!-- 단비 아빠 -->
+        <div class="vc-card vc-dark">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 단비 아버지</span>
+          </div>
+          <p class="vc-text">딸임에도 불구하고 틱틱거리고 불친절할 때도 많은 단비랑 대디캠프라… 잘 지낼 수 있을까 싶었습니다. 하지만 첫째 승리 때 느껴보지 못한 매우 깊은 위로를 받았습니다.
+<span class="vc-highlight">애찬식 때 단비가 해준 말이 있는데, 하나님의 위로였습니다. 어찌나 감사하고 위로가 되었던지 너무나 행복했습니다. 편지에서 처음엔 안 오려고 했던 꿈의학교를 어떻게든 가자고 설득해 주셔서 감사하다는 말에 보람되었고, "다 생각이 있구나"라는 마음에 안심이 되었습니다.</span>
+대디캠프를 통해 이제는 정말 하나님 손에 맡깁니다. 단 둘이서 이런 날이 또 올까 하는 생각이 듭니다. 15년의 전통을 이어올 수 있도록 헌신하신 선배 부모님들께도 감사드립니다.</p>
+        </div>
+
+        <!-- 리브 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중2 리브 아버지</span>
+          </div>
+          <p class="vc-text">바쁜 일상을 살다 보니 대디캠프가 필참이라는 공지에 힘듦 반, 기대 반으로 참석하게 되었습니다. 중학교 입학 후로는 함께 보낼 수 있는 시간이 정말 많이 없더군요.
+<span class="vc-highlight">리브는 아빠 코골이에 같이 못 잔다고 성화를 내었지만, 실제로 코골이 소리에 잠이 깬 리브가 녹음까지 해서 아빠를 깨웠지만 — 행복한 시간이었습니다.^^</span>
+복음이 사라져가고 영적으로 타락한 이 세대 가운데 하나님의 자녀로 키워보려는 부모들과 말씀으로 양육되어지는 아이들이 이렇게 많이 함께할 수 있다는 것 또한 큰 감격이었습니다. 귀한 전통이 아름답게 흘러와 그 혜택을 누리게 해주셔서 감사드립니다.</p>
+        </div>
+
+        <!-- 진실된 부 -->
+        <div class="vc-card">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">중1 진실된 아버지</span>
+          </div>
+          <p class="vc-text">한참 사춘기를 보내고 있는 아이에게 대디캠프는 그냥 귀찮은 이벤트 중 하나일 뿐, 거의 모든 것에 귀찮음과 무관심으로 일관하는 진실된. 하지만 그런 상황 속에서도 아빠를 생각하는 모습이 심심찮게 보여서 섭섭한 아빠의 마음을 위로해 주었습니다.
+<span class="vc-highlight">이정도면 됐겠지 생각했던 것들은 이젠 더 듣고 알아가야겠다는 생각을 하게 되었고, 아빠의 역할은 어쩌면 죽을 때까지 노력해야 하는 거구나라는 생각을 하게 됐습니다.</span>
+대디캠프를 먼저 경험하신 선배 아버님들의 봉사와 헌신으로 이런 귀하고 소중한 시간을 가질 수 있어 너무 감사하고 행복했습니다.</p>
+        </div>
+
+        <!-- 하언 부 -->
+        <div class="vc-card vc-wide">
+          <div class="vc-quote-mark">"</div>
+          <div class="vc-author">
+            <span class="vc-name">고1 하언 아버지</span>
+          </div>
+          <p class="vc-text">1박 2일 동안 하언이랑 둘이서 꼭 붙어 있는 즐거운 경험이었습니다. 하언이가 손 잡는 걸 꺼려하지 않고 먼저 손을 내밀기도 해서 더욱 좋았습니다.
+텐트를 설치하고 정리할 때, 전투식량을 만들어 먹을 때 하언이가 먼저 적극적으로 나서는 모습을 보니 하언이가 많이 성장했다는 생각과 함께 제가 너무 어리게만 보고 있구나 하는 반성도 해보았습니다.
+<span class="vc-highlight">애찬식을 함께하면서 초등 저학년 이후 처음으로 서로 안아주며 기도해보았습니다. 저와 하언이가 각자 하나님 앞에서 아들로 나란히 서서 중보하고 축복하는 자리였는데 이런 시간들이 계속 이어지도록 해야겠다 생각했습니다.</span></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUTREACH -->
+<section id="operations" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">Operations Guide</span>
+    <h2 class="section-title reveal">다음 세대를 위한 운영 가이드</h2>
+    <p class="section-lead reveal">
+      대디캠프는 학부모가 직접 기획하고 운영한다. 이 전통이 앞으로도 이어지도록, 15년의 지혜를 기록한다.
+    </p>
+    <div class="ops-cards">
+      <div class="ops-card reveal">
+        <div class="ops-icon">👥</div>
+        <div class="ops-title">드림대디클럽 구성</div>
+        <div class="ops-text">드림대디클럽(재학생 아버지 모임) 대표 1명이 전체를 이끈다. 드림패밀리멤버스(졸업생 학부모 모임)가 핵심 스텝으로 참여하고, 재학생 부모들과 함께 운영. 전체 스텝 규모 60~70명. 어머니들도 중보기도팀·준비팀으로 합류한다.</div>
+      </div>
+      <div class="ops-card reveal reveal-delay-1">
+        <div class="ops-icon">📅</div>
+        <div class="ops-title">시기와 장소</div>
+        <div class="ops-text">5월 가정의 달에 맞춰 진행. 꿈의학교 캠퍼스 운동장(텐트) + 렘넌트 홀(집회). 날씨 대안 계획 필수 — 2023년 우천 시 전체 실내 진행 사례 있음.</div>
+      </div>
+      <div class="ops-card reveal reveal-delay-2">
+        <div class="ops-icon">💰</div>
+        <div class="ops-title">예산과 참가비</div>
+        <div class="ops-text">참가비 20만원(2019년 기준) — 티셔츠, 워크북, 전투식량, 간식 포함. 스텝 선배 부모들은 자발적으로 추가 후원. 예산 결산서 반드시 다음 팀에 인계.</div>
+      </div>
+      <div class="ops-card reveal">
+        <div class="ops-icon">📢</div>
+        <div class="ops-title">모집과 소통</div>
+        <div class="ops-text">학교 홈페이지 공지 → 선착순 60가정 → 밴드 즉시 개설. 미가입자 개별 연락 필수. 티셔츠 사이즈 함께 수집. 사전 줌 소그룹 모임으로 아버지들 마음 준비시키기.</div>
+      </div>
+      <div class="ops-card reveal reveal-delay-1">
+        <div class="ops-icon">⛺</div>
+        <div class="ops-title">핵심 프로그램 흐름</div>
+        <div class="ops-text">아빠 특강(먼저 도착) → 아이들 환영 퍼포먼스 → 레크레이션 → 테이블 나눔 → 텐트 설치·전투식량 → 애찬식 → 페이스페인팅·물풍선 → 예배·말씀 → 수료식·평생약속 액자</div>
+      </div>
+      <div class="ops-card reveal reveal-delay-2">
+        <div class="ops-icon">🔄</div>
+        <div class="ops-title">인수인계</div>
+        <div class="ops-text">캠프 후 반드시 강평회 진행. 잘된 점·개선점 구글 드라이브에 기록. 다음 대표에게 모든 파일·예산·연락처 인계. 대디캠프 아카이브 Google Sites에 업데이트.</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h3 style="font-family:'Noto Serif KR',serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:32px;">D-8주 ~ D+1주 준비 타임라인</h3>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-label">D-8주</div>
+          <div class="step-body">
+            <h4>스텝 모집 및 킥오프 기도회</h4>
+            <p>드림대디클럽 임원 및 스텝 모집 공지. 첫 번째 스텝 기도회 개최. 역할 분담 및 전체 일정 확정. 학교 측에 공간 사용 협의 시작.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">D-6주</div>
+          <div class="step-body">
+            <h4>참가 접수 오픈 + 신입 아빠 줌 모임</h4>
+            <p>학교 홈페이지 공지글 게시 및 밴드 공유. 선착순 60가정 접수 후 밴드 개설. 신입 아버지 대상 사전 줌 소그룹 시작 — 대디캠프 경험자가 마음 준비 도움.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">D-4주</div>
+          <div class="step-body">
+            <h4>물품 준비 + 학교 지원 요청</h4>
+            <p>티셔츠 발주, 워크북 제작, 전투식량 주문. <strong>학교 관계자에게 필요 물품 목록 직접 전달 필수</strong> — 구글드라이브 입력만으로는 부족하다. 교사들이 학교에 계실 때 직접 수배.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">D-2주</div>
+          <div class="step-body">
+            <h4>최종 점검 기도회 + 테이블 리더 교육</h4>
+            <p>팀별 세부 점검. 테이블 리더 나눔 방식 교육. 전체 일정표 최종 확인. 날씨 대안 플랜 수립. 찬양 팀 리허설.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">D-Day</div>
+          <div class="step-body">
+            <h4>캠프 진행</h4>
+            <p>아버지 먼저 도착 → 사전 특강 → 자녀 환영 퍼포먼스 → 1박2일 프로그램 진행 → 수료식 → 철수. <strong>영상·사진 담당자는 반드시 별도 지정</strong> — 15년 후의 기록을 위해.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">D+1주</div>
+          <div class="step-body">
+            <h4>강평회 + 인수인계</h4>
+            <p>전체 강평회 개최 및 문서화. 다음 대표에게 파일·예산·연락처 인계. 후기 및 사진 수집하여 이 웹북에 기록 추가. 참가 가정에 감사 인사 전달.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pull-quote reveal">
+      <blockquote>"자녀를 위해 찾아온 그곳에서, 역설적으로 아버지들 자신이 더 큰 위로와 치유를 경험했습니다."</blockquote>
+      <cite>— 졸업생 강건, '꿈의학교의 지속가능성에 대한 고찰' 중에서</cite>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: VIDEOS -->
+<section id="gallery-videos" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">Film Archive · 2010–2025</span>
+    <h2 class="section-title reveal">15년의 순간들, 영상으로</h2>
+    <p class="section-lead reveal">
+      매년 캠프가 끝난 후 아버지들이 직접 찍은 장면으로 만든 스케치 필름.<br>
+      카메라가 담지 못한 것들은 눈빛이 담고, 눈빛이 놓친 것들은 기억이 붙든다.
+    </p>
+
+    <!-- 메인 플레이어 -->
+    <div class="video-stage reveal">
+      <div class="video-main" id="videoMain">
+        <iframe id="mainIframe"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+        <!-- 오류 시 클릭 인터셉터: 올바른 유튜브 주소로 이동 -->
+        <a id="iframeOverlay" href="#" target="_blank"
+           style="display:none; position:absolute; inset:0; z-index:10; cursor:pointer;"
+           title="YouTube에서 보기"></a>
+        <div class="video-fallback" id="videoFallback">
+          <div class="video-fallback-icon">▶</div>
+          <p class="video-fallback-msg">이 영상은 외부 사이트 재생이 제한되어 있습니다.<br>아래 버튼을 눌러 유튜브에서 직접 시청하세요.</p>
+          <a class="video-fallback-btn" id="fallbackLink" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+            YouTube에서 보기
+          </a>
+        </div>
+      </div>
+      <div class="video-info">
+        <div>
+          <div class="video-info-year" id="vInfoYear">연도 · 회차</div>
+          <div class="video-info-title" id="vInfoTitle">영상 제목</div>
+          <div class="video-info-desc" id="vInfoDesc">영상 설명을 여기에 입력합니다.</div>
+        </div>
+        <div class="video-info-tag" id="vInfoTag">스케치 필름</div>
+      </div>
+    </div>
+
+    <!-- 썸네일 목록 -->
+    <!-- ★ 유튜브 영상 추가 방법:
+         아래 VIDEOS 배열에 한 항목씩 추가하세요.
+         videoId: 유튜브 URL https://youtu.be/XXXXX 에서 XXXXX 부분
+    -->
+    <div class="video-thumbs" id="vThumbs"></div>
+
+
+  </div>
+</section>
+
+<!-- GALLERY: PHOTOS -->
+<section id="gallery-photos" class="section">
+  <div class="container">
+    <span class="eyebrow reveal">Photo Archive · 2010–2025</span>
+    <h2 class="section-title reveal">텐트 안과 밖의 기억들</h2>
+    <p class="section-lead reveal">
+      15년의 캠프에서 가장 빛났던 순간들. 연도를 선택해 그 해의 기억 속으로 들어가보세요.
+    </p>
+
+    <!-- 연도 탭 -->
+    <div class="year-tabs reveal" id="yearTabs"></div>
+
+    <!-- 연도별 사진 패널 -->
+    <!-- ★ 사진 추가 방법:
+         아래 PHOTOS 객체에 연도별로 이미지 배열을 채우세요.
+         Google Drive 사진 직접 링크 형식:
+         https://drive.google.com/uc?export=view&id=파일ID
+         파일ID는 Drive에서 파일 우클릭 → "링크 복사" 후
+         .../d/ 와 /view 사이의 문자열입니다.
+    -->
+    <div id="photoPanels"></div>
+  </div>
+</section>
+
+<!-- 라이트박스 -->
+<div class="lbox" id="lbox">
+  <button class="lbox-close" onclick="closeLbox()">✕</button>
+  <img id="lboxImg" src="" alt="">
+</div>
+
+<!-- CLOSING -->
+<section id="closing">
+  <span class="eyebrow" style="margin-bottom:24px;display:block;text-align:center;">Our Spirit · 15 Years</span>
+  <h2 class="closing-title">"아버지가 회복될 때<br>가정이 회복되고,<br>가정이 회복될 때<br>공동체가 살아난다"</h2>
+  <p class="closing-text">
+    누가 알아주지 않아도, 아버님들은 그저 한 가정이라도 좋은 변화가 있기를 바라는 마음으로 열정을 다하셨다. 보이지 않는 곳에서, 재정을 내어, 휴가를 반납하며. 그 마음이 15년을 이어왔다.
+  </p>
+  <div class="closing-attrs">
+    <div class="attr">
+      <div class="attr-icon">❤️</div>
+      <div class="attr-title">사랑</div>
+      <div class="attr-text">아버지의 마음이 자녀에게로, 자녀의 마음이 아버지에게로</div>
+    </div>
+    <div class="attr">
+      <div class="attr-icon">🙌</div>
+      <div class="attr-title">섬김</div>
+      <div class="attr-text">보이지 않는 곳에서 쉬지 않는 헌신의 손길들</div>
+    </div>
+    <div class="attr">
+      <div class="attr-icon">🔗</div>
+      <div class="attr-title">연결</div>
+      <div class="attr-text">아버지와 자녀, 가정과 공동체, 우리와 하나님</div>
+    </div>
+    <div class="attr">
+      <div class="attr-icon">🌿</div>
+      <div class="attr-title">지속</div>
+      <div class="attr-text">졸업해도 돌아오는 스텝들, 끊이지 않는 전통</div>
+    </div>
+    <div class="attr">
+      <div class="attr-icon">✉️</div>
+      <div class="attr-title">전수</div>
+      <div class="attr-text">이 웹북이 다음 세대에게 전하는 15년의 지혜</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="data:image/png;base64,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" class="footer-logo-img" alt="Dream Daddy Club">
+  <div class="footer-logo">Dream Daddy Camp</div>
+  <p class="footer-sub">꿈의학교 아버지·자녀 캠프 · 2010년부터 이어온 가정 회복의 이야기</p>
+  <p class="footer-copy">© 드림대디클럽(Dream Daddy Club) · 드림 대디캠프 15주년 기념 웹북</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   ★★★  여기를 채우세요  ★★★
+   ════════════════════════════════════════════════════ */
+
+// ① 유튜브 영상 목록 (연도 최신순)
+// videoId: 유튜브 공유 URL에서 youtu.be/ 뒤의 문자열
+const VIDEOS = [
+  {
+    videoId: 'QR1uCDVm1xw',
+    year: '2023 · 제12회',
+    title: '제12회 대디캠프 스케치',
+    desc: '2023년 꿈의학교 캠퍼스에서 열린 제12회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'AQZUu7hW_ww',
+    year: '2019 · 제9회',
+    title: '제9회 대디캠프 스케치',
+    desc: '2019년 꿈의학교 캠퍼스에서 열린 제9회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'sV7U3wCoCLY',
+    year: '2015 · 제1회 동경요한학교',
+    title: '제1회 동경 요한학교 대디캠프',
+    desc: '2015년 10월, 일본 동경 요한학교(YICS)에서 열린 해외 첫 대디캠프.',
+    tag: '해외 캠프'
+  },
+  {
+    videoId: 'BR4JMl71sNE',
+    year: '2015 · 제6회',
+    title: '제6회 대디캠프 스케치',
+    desc: '2015년 꿈의학교 캠퍼스에서 열린 제6회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'Lm_sHQ3gCsc',
+    year: '2014 · 제5회',
+    title: '제5회 대디캠프 스케치',
+    desc: '2014년 횡성 숲체원에서 열린 제5회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'JZpugRzKDW8',
+    year: '2013 · 제4회',
+    title: '제4회 대디캠프 스케치',
+    desc: '2013년 횡성 숲체원에서 열린 제4회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'h9iIw44Y6oM',
+    year: '2010 · 제1회',
+    title: '제1회 대디캠프 스케치',
+    desc: '2010년 천안 국립청소년수련원에서 열린 역사적인 첫 번째 대디캠프.',
+    tag: '스케치 필름'
+  },
+  // 영상이 추가될수록 아래에 같은 형식으로 계속 추가하세요
+];
+
+// ② 연도별 사진 (탭으로 전환)
+// 사진 없는 연도는 images: [] 로 비워두면 "사진 준비 중" 표시
+// Google Drive 직접 링크: https://drive.google.com/uc?export=view&id=파일ID
+// 파일ID 찾기: Drive 파일 우클릭 → 링크복사 → 링크 중 /d/와/view 사이 문자열
+const PHOTOS = {
+  2025: {
+    label: '제14회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/1PiTLifSx-afYwlbbj59X6jKzrvuXiWAh',
+    images: [
+      // { src: 'https://drive.google.com/uc?export=view&id=파일ID', cap: '사진 설명' },
+    ]
+  },
+  2024: {
+    label: '제13회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/1kgWnTZNDGeWAWb2nZjwSQYEADDi4vQqk',
+    images: []
+  },
+  2023: {
+    label: '제12회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/15WuMroKMIa31JnlW9GbKPMr5GqerHyFw',
+    images: []
+  },
+  2022: {
+    label: '제11회 · 줌 캠프',
+    driveFolder: 'https://drive.google.com/drive/folders/1cbh4XOZtnb5C7u-Dja_Gj1rEwUImNoDV',
+    images: []
+  },
+  2021: {
+    label: '제10회 · 줌 캠프',
+    driveFolder: 'https://drive.google.com/drive/folders/1ct8Vp3t84T-rp9PxQbRB5KdQanPY_pSE',
+    images: []
+  },
+  2020: {
+    label: '대디캠프 없음 (코로나)',
+    driveFolder: '',
+    images: [],
+    nocamp: true
+  },
+  2019: {
+    label: '제9회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/18DZ58IHE_UZ93FWWH4sX9CPz9lXdrImZ',
+    images: []
+  },
+  2018: {
+    label: '제8회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/1UuCzK4pyGieOxdMH-1qRJAZuK5gkj4gk',
+    images: []
+  },
+  2017: {
+    label: '제7회 · 꿈의학교 캠퍼스',
+    driveFolder: 'https://drive.google.com/drive/folders/1Bq2Yizl5z3rKoOgYszek3xTeX-GZKbFY',
+    images: []
+  },
+  2016: {
+    label: '안식년',
+    driveFolder: '',
+    images: [],
+    nocamp: true
+  },
+  '2015b': {
+    tabLabel: '2015',
+    label: '2015',
+    subEvents: [
+      {
+        key: '2015a',
+        label: '2015 제6회 꿈의학교 캠퍼스',
+        driveFolder: 'https://drive.google.com/drive/folders/1YHd-28kYOiLW_NVv8dgQS_NDf06NQZ_b',
+        images: []
+      },
+      {
+        key: '2015b',
+        label: '2015 제1회 요한동경학교 대디캠프',
+        driveFolder: 'https://drive.google.com/drive/folders/16PN4CnRMfvUIebbY5pd84iUDnEGqiCvt',
+        images: []
+      }
+    ]
+  },
+  2014: {
+    label: '제5회 · 횡성 숲체원',
+    driveFolder: 'https://drive.google.com/drive/folders/137JL8L1oMBqusGUXADl3RO1VtS8cK-5o',
+    images: []
+  },
+  2013: { label: '제4회 · 횡성 숲체원', driveFolder: '', images: [] },
+  2012: { label: '제3회', driveFolder: '', images: [] },
+  2011: { label: '제2회 · 태안 만리포수련원', driveFolder: '', images: [] },
+  2010: { label: '제1회 · 천안 국립청소년수련원', driveFolder: '', images: [] },
+};
+
+/* ═══════════════════════════════════════════════════════
+   렌더링 로직 (수정 불필요)
+   ════════════════════════════════════════════════════ */
+
+// 유튜브 썸네일 자동생성
+const ytThumb = id => `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+
+// 영상 썸네일 렌더
+function renderVideos() {
+  if (!VIDEOS.length) return;
+  const container = document.getElementById('vThumbs');
+  VIDEOS.forEach((v, i) => {
+    const el = document.createElement('div');
+    el.className = 'vthumb' + (i === 0 ? ' active' : '');
+    el.dataset.idx = i;
+    el.innerHTML = `
+      <img src="${ytThumb(v.videoId)}" alt="${v.title}" onerror="this.style.display='none'">
+      <div class="vthumb-overlay">
+        <div class="vthumb-play">▶</div>
+        <div class="vthumb-year">${v.year}</div>
+        <div class="vthumb-name">${v.title}</div>
+      </div>`;
+    el.addEventListener('click', () => selectVideo(i, true));
+    container.appendChild(el);
+  });
+  if (VIDEOS[0]) selectVideo(0);
+}
+
+function selectVideo(idx, autoplay = false) {
+  const v = VIDEOS[idx];
+  const iframe = document.getElementById('mainIframe');
+  const fallback = document.getElementById('videoFallback');
+  const fallbackLink = document.getElementById('fallbackLink');
+
+  // 폴백 숨기고 iframe 보이기
+  fallback.classList.remove('show');
+  iframe.style.display = 'block';
+  document.getElementById('iframeOverlay').style.display = 'none';
+
+  const ap = autoplay ? '&autoplay=1' : '';
+  iframe.src = `https://www.youtube.com/embed/${v.videoId}?rel=0&modestbranding=1&enablejsapi=1${ap}`;
+
+  // 유튜브 링크 업데이트 (오버레이 + 폴백 버튼 모두)
+  const ytUrl = `https://www.youtube.com/watch?v=${v.videoId}`;
+  fallbackLink.href = ytUrl;
+  document.getElementById('iframeOverlay').href = ytUrl;
+
+  document.getElementById('vInfoYear').textContent = v.year;
+  document.getElementById('vInfoTitle').textContent = v.title;
+  document.getElementById('vInfoDesc').textContent = v.desc;
+  document.getElementById('vInfoTag').textContent = v.tag;
+  document.querySelectorAll('.vthumb').forEach((el, i) =>
+    el.classList.toggle('active', i === idx));
+}
+
+// 유튜브 에러 메시지 수신 (오류 153, 101, 150 = 임베드 차단)
+window.addEventListener('message', function(e) {
+  if (!e.origin.includes('youtube.com')) return;
+  try {
+    const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+    const errorCodes = [153, 101, 150, 2, 5, 100];
+    if (data.event === 'onError' && errorCodes.includes(data.info)) {
+      const iframe = document.getElementById('mainIframe');
+      const fallback = document.getElementById('videoFallback');
+      const overlay = document.getElementById('iframeOverlay');
+      // iframe은 유지하되 그 위에 오버레이 + 폴백 UI 표시
+      overlay.style.display = 'block';
+      fallback.classList.add('show');
+    }
+  } catch(err) {}
+});
+
+// 사진 탭 렌더
+function renderPhotoTabs() {
+  const keys = Object.keys(PHOTOS);
+  keys.sort((a, b) => {
+    const na = parseFloat(a), nb = parseFloat(b);
+    if (na !== nb) return nb - na;
+    return b.localeCompare(a);
+  });
+
+  const tabs = document.getElementById('yearTabs');
+  const panels = document.getElementById('photoPanels');
+  let firstActive = false;
+
+  keys.forEach(key => {
+    const data = PHOTOS[key];
+    const isFirst = !firstActive;
+    if (isFirst) firstActive = true;
+
+    const tabText = data.tabLabel || Math.floor(parseFloat(key));
+    const displayYear = Math.floor(parseFloat(key));
+
+    const tab = document.createElement('div');
+    tab.className = 'ytab' + (isFirst ? ' active' : '') + (data.nocamp ? ' ytab-nocamp' : '');
+    tab.textContent = tabText;
+    tab.dataset.yr = key;
+    tab.addEventListener('click', () => switchYear(key));
+    tabs.appendChild(tab);
+
+    const panel = document.createElement('div');
+    panel.className = 'photo-panel' + (isFirst ? ' active' : '');
+    panel.id = 'pp-' + key;
+
+    function makePhotoGrid(images) {
+      if (!images || images.length === 0) {
+        return `<div class="photo-empty-state"><div class="ei">📷</div><p>사진을 준비 중입니다.<br>큐레이션 후 추가될 예정입니다.</p></div>`;
+      }
+      return `<div class="photo-grid">${images.map((img, j) =>
+        `<div class="photo-cell${j === 0 ? ' tall' : ''}" onclick="openLbox('${img.src}')">
+          <img src="${img.src}" alt="${img.cap || ''}" loading="lazy">
+          ${img.cap ? `<div class="photo-cap">${img.cap}</div>` : ''}
+        </div>`).join('')}</div>`;
+    }
+
+    if (data.subEvents) {
+      // 2015처럼 서브이벤트가 있는 경우
+      const subTabsHtml = `<div class="sub-tabs">${data.subEvents.map((ev, i) =>
+        `<div class="sub-tab${i === 0 ? ' active' : ''}" data-sub="${ev.key}"
+          onclick="switchSubTab('${key}', '${ev.key}')">${ev.label}</div>`
+      ).join('')}</div>`;
+      const subPanelsHtml = data.subEvents.map((ev, i) =>
+        `<div class="sub-panel${i === 0 ? ' active' : ''}" id="sp-${key}-${ev.key}">${makePhotoGrid(ev.images)}</div>`
+      ).join('');
+      panel.innerHTML = `<div class="photo-year-header"><div class="photo-year-num">${displayYear}</div></div>${subTabsHtml}${subPanelsHtml}`;
+    } else {
+      let gridHtml = '';
+      if (data.nocamp) {
+        gridHtml = `<div class="photo-empty-state"><div class="ei">🔔</div><p>${data.label}</p></div>`;
+      } else {
+        gridHtml = makePhotoGrid(data.images);
+      }
+      panel.innerHTML = `<div class="photo-year-header"><div class="photo-year-num">${displayYear}</div><div class="photo-year-meta"><strong>${data.label}</strong></div></div>${gridHtml}`;
+    }
+
+    panels.appendChild(panel);
+  });
+}
+
+function switchYear(key) {
+  document.querySelectorAll('.ytab').forEach(t => t.classList.toggle('active', t.dataset.yr == key));
+  document.querySelectorAll('.photo-panel').forEach(p => p.classList.toggle('active', p.id === 'pp-' + key));
+}
+
+function switchSubTab(parentKey, subKey) {
+  const panel = document.getElementById('pp-' + parentKey);
+  panel.querySelectorAll('.sub-tab').forEach(t => t.classList.toggle('active', t.dataset.sub === subKey));
+  panel.querySelectorAll('.sub-panel').forEach(p => p.classList.toggle('active', p.id === `sp-${parentKey}-${subKey}`));
+}
+
+// 라이트박스
+function openLbox(src) {
+  document.getElementById('lboxImg').src = src;
+  document.getElementById('lbox').classList.add('open');
+}
+function closeLbox() { document.getElementById('lbox').classList.remove('open'); }
+document.getElementById('lbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLbox(); });
+
+// 창설자 카드 토글
+function toggleFounder(btn) {
+  const fullText = btn.nextElementSibling;
+  const isOpen = fullText.classList.contains('open');
+  fullText.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.innerHTML = isOpen
+    ? '전문 읽기 — 대디캠프는 왜 시작되었나 <span class="btn-arrow">▼</span>'
+    : '접기 <span class="btn-arrow" style="transform:rotate(180deg)">▼</span>';
+}
+
+// 햄버거 메뉴
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('navMobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+
+// 초기화
+renderVideos();
+renderPhotoTabs();
+
+// 스크롤 reveal 애니메이션
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), (i % 5) * 80);
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
