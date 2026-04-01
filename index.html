@@ -454,16 +454,17 @@ nav {
 
 /* 3열 그리드 — 각 셀 비율 고정 */
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+  columns: 3;
+  column-gap: 4px;
   margin-bottom: 40px;
 }
 .photo-cell {
   position: relative; overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 4px;
   background: var(--cream); cursor: pointer;
 }
-.photo-cell.tall { grid-row: unset; }
+.photo-cell.tall { }
 .photo-cell img {
   width: 100%; height: auto; display: block;
   transition: transform 0.4s;
