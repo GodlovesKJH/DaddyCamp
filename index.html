@@ -407,22 +407,10 @@ nav {
 #gallery-photos { background: var(--warm-white); }
 
 .year-tabs-wrap {
-  position: relative; margin-bottom: 12px;
+  position: relative; margin-bottom: 32px;
+  display: flex; align-items: center; gap: 4px;
 }
-.year-tabs-wrap::after {
-  content: '›';
-  position: absolute; right: 0; top: 0; bottom: 1px;
-  width: 48px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; color: var(--gold);
-  background: linear-gradient(to right, transparent, var(--warm-white) 60%);
-  pointer-events: none;
-  animation: nudge 2s ease-in-out 1.5s 3;
-}
-@keyframes nudge {
-  0%,100% { transform: translateX(0); opacity:1; }
-  50% { transform: translateX(4px); opacity:0.6; }
-}
+
 .year-tabs {
   display: flex; gap: 0;
   border-bottom: 1px solid rgba(184,131,46,0.2);
@@ -439,28 +427,16 @@ nav {
 .ytab.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
 .ytab.ytab-nocamp { opacity: 0.45; font-style: italic; }
 
-/* 초기 아카이브 안내 배너 */
-.archive-notice {
-  display: flex; align-items: flex-start; gap: 14px;
-  background: rgba(184,131,46,0.07);
-  border: 1px solid rgba(184,131,46,0.2);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 32px;
-  font-size: 13px; line-height: 1.8; color: var(--ink-light);
+/* 연도 탭 화살표 버튼 */
+.ytab-arrow {
+  flex-shrink: 0; width: 32px; height: var(--tab-h, 40px);
+  background: none; border: none; cursor: pointer;
+  font-size: 22px; color: var(--gold); line-height: 1;
+  padding: 0; transition: color 0.2s, opacity 0.2s;
+  display: flex; align-items: center; justify-content: center;
 }
-.archive-notice .an-icon { font-size: 20px; flex-shrink:0; margin-top:2px; }
-.archive-notice strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 4px; }
-.archive-notice .an-years {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
-}
-.archive-notice .an-yr {
-  font-size: 11px; padding: 3px 10px; border-radius: 20px;
-  border: 1px solid rgba(184,131,46,0.3); color: var(--gold);
-  background: rgba(184,131,46,0.08); letter-spacing: 0.05em;
-  cursor: pointer; transition: background 0.2s;
-}
-.archive-notice .an-yr:hover { background: var(--gold); color: #fff; }
+.ytab-arrow:hover { color: var(--ink); }
+.ytab-arrow:disabled { opacity: 0.2; cursor: default; }
 
 /* 2015 서브탭 */
 .sub-tabs {
@@ -2362,23 +2338,9 @@ nav {
 
     <!-- 연도 탭 -->
     <div class="year-tabs-wrap reveal">
+      <button class="ytab-arrow ytab-arrow-left" id="tabArrowLeft" onclick="scrollYearTabs(-1)" aria-label="이전">&#8249;</button>
       <div class="year-tabs" id="yearTabs"></div>
-    </div>
-
-    <!-- 초기 아카이브 안내 -->
-    <div class="archive-notice reveal">
-      <div class="an-icon">📅</div>
-      <div>
-        <strong>탭을 오른쪽으로 밀면 더 많은 연도가 있어요</strong>
-        대디캠프는 2010년 제1회부터 시작되었습니다. 2010·2011·2012년 사진 아카이브는
-        탭을 오른쪽 끝까지 밀어 확인하실 수 있어요.
-        2016년은 안식년, 2020년은 코로나로 캠프가 없었습니다.
-        <div class="an-years">
-          <span class="an-yr" onclick="switchYear('2010')">2010 제1회</span>
-          <span class="an-yr" onclick="switchYear('2011')">2011 제2회</span>
-          <span class="an-yr" onclick="switchYear('2012')">2012 제3회</span>
-        </div>
-      </div>
+      <button class="ytab-arrow ytab-arrow-right" id="tabArrowRight" onclick="scrollYearTabs(1)" aria-label="다음">&#8250;</button>
     </div>
 
     <!-- 연도별 사진 패널 -->
@@ -2449,6 +2411,20 @@ const VIDEOS = [
     year: '2023 · 제12회',
     title: '제12회 대디캠프 스케치',
     desc: '2023년 꿈의학교 캠퍼스에서 열린 제12회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: 'wMBfHU8A3TU',
+    year: '2018 · 제8회',
+    title: '제8회 대디캠프 스케치 (1)',
+    desc: '2018년 꿈의학교 캠퍼스에서 열린 제8회 대디캠프.',
+    tag: '스케치 필름'
+  },
+  {
+    videoId: '_Nrk8xX7GBg',
+    year: '2018 · 제8회',
+    title: '제8회 대디캠프 스케치 (2)',
+    desc: '2018년 꿈의학교 캠퍼스에서 열린 제8회 대디캠프.',
     tag: '스케치 필름'
   },
   {
@@ -2859,7 +2835,58 @@ const PHOTOS = {
   2017: {
     label: '제7회 · 꿈의학교 캠퍼스',
     driveFolder: 'https://drive.google.com/drive/folders/1Bq2Yizl5z3rKoOgYszek3xTeX-GZKbFY',
-    images: []
+    images: [
+      { src: 'https://lh3.googleusercontent.com/d/1bZHigog6nK_fYfOJXvmq9nvQbBbeXvad', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1kUfXE0fkqyvFn_djwGhT-qBJ2AYz65OJ', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1Xi7mkGQ03SM3tl4BqXj4O_3DqwAGhJpy', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1f67BlS7SFA_0Sm2KvcrIaTaYs-HRCCTX', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1BP3nxMgCOM0KTWfwwTs__EtGqtO5JXGF', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1zQLEp_nPfC-filTPj_OZW3yJGtN5dzdZ', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1wszdkBbNPEOq2CyLlxWGhHGV1atLQGGs', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1iyqPX5dBYivVjOETGRg_UAdtVogObLpG', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1usa5GXsgyjT9eA1qA9nBWKIXcl3API6c', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1Ehxogq65Ue8Rc7ph7M3T49juao-3n-Y-', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1BLstSKzCaQxVK5iieIvSTuaUc9wR3nsg', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1H3SivEf0LGE_1UUPHAKw4crHGhNfR_r0', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1gOJA3_obVVTyf4rUjcujncWkYan5Oiar', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1o1mALu5C7iHaeduwlxXawl18jJ7asANP', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1fyJe1vA59HhaBh4-aalIgXlqyUz0nGwA', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1MWsNJrrhQO_4S3ir5B9Vf80LfjNGM-lU', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1pjPZVvVyxopZqK_T3zqaOvAuKNtULfUG', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1EeRYwxUkD_eN4mejx9w4jEQsLiRQw9lb', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1B0qUVE4SCwQrOUAayRZGcwwJHagnvf3U', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1k3M5vuy_Fz0JdiQl3vfoFfVCCNnigzqR', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1q35zVYA_2O4NDh68RCDdwoKE0lbq5qiv', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/14tOuoCXEWeb8ty7egJnyaglG6HhWvC__', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/16l21DcdT3d1ubl712peOsiRHJwAeHg7B', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1ECJTVUKXB0RcD7Np3vf_BgL7sRwRGPVN', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1mcPq77ZsLZFHq6XeobcIphH-Hk1MEt4A', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1Ldzw4VuEvMCI7VpPmA4e08U1PdS1jKvH', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1jm5fq2mHp4POeF94GnhieMcBtK-YIkyE', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1CWYcLUXsmgFUkPZr7A4pk2RYajgZT-sC', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1nGrl1SgFf7qYIWj3Xf8_kJO0N6b1QUnH', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1umrKk3iW8nNgnW6YcnWPjtfcTjOQtL6y', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1P62Rqj4BzHGsDwS-_fhKB3YfWMEyts6k', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1B1OmvGejMmWQYU0qsULiaLiHfRnRqoYX', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1iN712iE30V9EjqQbL8s_3iJX3qY_jDGB', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1pJqjscwvsYqZW8p1ktgo2mcldyKcyjaE', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1EXstsa_QnaBBf9eE3YzA80LuAGX3QRPN', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1yED2HO8yLzqP3mGXrmNx6YK1Qs035_fC', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1jGEqBomXoCMP_0hlGdFkKnhk2BPlLHme', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1nqnPK7lNlZ0pl2nOs99uyKaBZMkHVxxp', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1cU8PS5OZ6NUNXfmBAgqHp-kMoJNEMJlK', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/149PD25XDqz-U0pzk8LiqZsDrUCeTen9Y', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1RCSucdJBoyNtBBPvsRnqVttFRgY5PnO5', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/13v2N3iOncFhiCCPYZmPQIb3spx71k69n', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1WRgLoijtSldAs5h1lEoHGMGmlTO09DHq', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1wlS-MDqZplDFOETvJnq-gIjp0a22k8pN', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1JRsbjTXKCyYhOGIAFrQ_wxSA0inNqpsS', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1IMcBfgF9pwx7cKWwhY0I_wxgfFEflRv9', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1a8F2IIpKbky9Wpkk1UV5uFSY2e77tClo', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1B7mBD2vwyR9V3Gk_9Mp2mAH14jS33Iv-', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/1wzAe7t3qnhnhHVixEam5OHHv_ASIo5Nt', cap: '' },
+      { src: 'https://lh3.googleusercontent.com/d/17i9MU2FqdxHa4qdympxWsLRS5B0GLyyr', cap: '' },
+    ]
   },
   2016: {
     label: '안식년',
@@ -3389,6 +3416,14 @@ function renderPhotoTabs() {
 function switchYear(key) {
   document.querySelectorAll('.ytab').forEach(t => t.classList.toggle('active', t.dataset.yr == key));
   document.querySelectorAll('.photo-panel').forEach(p => p.classList.toggle('active', p.id === 'pp-' + key));
+  // 선택된 탭이 보이도록 스크롤
+  const activeTab = document.querySelector(`.ytab[data-yr="${key}"]`);
+  if (activeTab) activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function scrollYearTabs(dir) {
+  const tabs = document.getElementById('yearTabs');
+  tabs.scrollBy({ left: dir * 200, behavior: 'smooth' });
 }
 
 function switchSubTab(parentKey, subKey) {
